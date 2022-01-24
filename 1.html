@@ -10,7 +10,57 @@
     
 
     <script>
-        //调用boolean（）将其转化为boolean值
+
+
+//变量的命名规则
+  // 字母，数字，"_","$"
+  // 不能以数字
+  // 不能是js标准中的关键字或者保留字
+  //驼峰命名法  worldHello
+  //所有UTF-8的内容都可以作为标识变量包括中文
+//数据类型
+  //String,number,boolean,null,undefined(前几种均为基本数据类型),0bject(引用数据类型) 后新增一个 symbol
+  //在字符串中使用\作为转义字符
+    //   在js中所有数值都是number类型 包括整数和float
+    //   var a="123" String;
+    //   var a=123 Number
+    //   var a="123.3" number
+
+    // typeof 为检查类型  
+    // typeof a;
+    // console.log(typeof a);
+       // Number.MAX_VALUE 
+        //    MIN  表示最大值和最小值
+    // typeof在检查infinted 和 -Infinity 也为number 正无穷和负无穷
+    // 若 "avc"*"dsd" 返回NAN  是一个特殊数字表示不是数字 NOT A NUMBER
+    // 整数运算基本保证精度 浮点不一定
+    // 使用typeof检查null时返回 Object
+//强制类型转换
+//  toString()该方法不影响原来的变量 转换结果返回 null和undefined没有该方法 会报错
+// var a=21； a.tostring();转换为字符串
+// a=a.tostring()；
+// 方法二,调用 string(参数) 也可转为字符串  其中 null和undefined 也可以使用  对于number和boolean实际上就是调用tostring()
+
+
+// 转换数值类型
+    // 使用number（）；
+    // var a="avc";
+    // a=Number(a); 结果为NaN
+ //若有非数值内容转为"NaN" 非数值都转为这个
+ //空串转为 a=""  0
+ //  true->1 false->0;
+ //若为纯数字的字符串"123" ->123
+ //undefined->"nan"
+//方法二, 使用 parseInt(),parsefloat() 转换为数值和浮点数   将有效数字取出，但如果是 var a="b234T" 为"NAN var a="3332T" = 3332
+// 如果对非字符串类型使用以上两种方法先转换为STring再转换为数字
+// 在js中表示16进制数字为0X开头
+// 8进制为0开头  但是有些浏览器会将8进制当成十进制来算  例如  070=70
+// 2进制为0b开头但不是所有浏览器都支持
+// 以上输出结果都是十进制数
+// 可以在parseint中指定进制数 在第二个参数中可以解决 parseint（a,0x);
+
+
+//调用boolean（）将其转化为boolean值
         //除了0和NAN,null,空串，undefined 其余的全为true 对象也为true(object)
             //    var a=123;
             //    var b=Infinity;
@@ -20,7 +70,7 @@
             //    console.log(Boolean(c));
         
         
-        //运算符运算，typeof也为运算符，将其类型以字符串形式返回。
+//运算符运算，typeof也为运算符，将其类型以字符串形式返回。
         //算数运算符，当对不是Number类型的值进行运算时，会将这些值转换为Number然后再运算
         //例如，true+false= 1+0；
         //任何值和NAN做运算最后结果都为NAN；
@@ -89,6 +139,69 @@
         // 比较两个值是否相等 使用==
         // =是赋值运算符
         //若比较时值不同，则先转换为相同的类型再比较
-    </script>
+        // console.log(true=="1");//true;
+        // console.log(null==0);//false; 没转换成 特殊情况 如果null转换成number就相等
+        // undefined 衍生自null
+        // 当两个作比较时返回true  console.log(undefinded==null) //true
+        //nan 不和任何值相等包括他本身
+        // console.log(NAN==NAN);//fasle;
+            //判断B的值是不是NAN
+            //   可以通过isNan()函数判断是不是NAN
+            // var b=NaN;
+            //  console.log(Nan==Nan)//不可以使用这种方式
+            // console.log(isNaN(b));//true;
+        //===全等运算符。  不同在于，他会判断值的类型是不是一样若值一样  类型不一样则返回false；
+        //不会进行转换。
+
+//条件运算符
+//   三元运算符
+//   条件表达式?语句1:语句2
+        // 若为true执行1 false执行2
+        // var max=a>b?(a>c?a:c):(b>c?b:c);
+// 运算符优先级
+            //运算符 , 用于分割语句
+            // 使用时可以同时声明多个变量
+            // var a=1,b=2;
+        // js运算符先乘除后加减
+                        //   运算符                                   	描述
+                        // . [] ()           	                字段访问、数组下标、函数调用以及表达式分组
+                        // ++ -- - ~ ! delete new typeof void	一元运算符、返回数据类型、对象创建、未定义值
+                        // * / %	                            乘法、除法、取模
+                        // + - +	                            加法、减法、字符串连接
+                        // << >> >>>	                        移位
+                        // < <= > >= instanceof	                小于、小于等于、大于、大于等于、instanceof
+                        // == != === !==	                    等于、不等于、严格相等、非严格相等
+                        // &	                                按位与
+                        // ^	                                按位异或
+                        // |	                                按位或
+                        // &&	                                逻辑与
+                        // ||	                                逻辑或
+                        // ?:	                                条件
+                        // = oP=	                            赋值、运算赋值
+                        // ,	                                多重求值
+
+//条件判断语句
+// if(){
+
+// }else{
+
+// }
+
+// if(){
+
+// }else if(){1
+
+    
+// }else if(){
+
+// }else{
+
+// }
+
+//键盘输入函数
+                    //  prompt() 为键盘输入函数  返回的值是string类型的
+                // var a=prompt(); prompt("请输入");
+                // console.log(a);
+   </script>
 </body>
 </html>
