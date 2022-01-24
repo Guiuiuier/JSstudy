@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //调用boolean（）将其转化为boolean值
+        //除了0和NAN,null,空串，undefined 其余的全为true 对象也为true(object)
+            //    var a=123;
+            //    var b=Infinity;
+            //    var c=null;
+            //    console.log(Boolean(a));
+            //    console.log(Boolean(b));
+            //    console.log(Boolean(c));
+        
+        
+        //运算符运算，typeof也为运算符，将其类型以字符串形式返回。
+        //算数运算符，当对不是Number类型的值进行运算时，会将这些值转换为Number然后再运算
+        //例如，true+false= 1+0；
+        //任何值和NAN做运算最后结果都为NAN；
+            // var c=133;
+            // c=c+""; //可以用这种方法将任意数据类型加一个空串即可将其转为String 是一种隐式类型转换，由浏览器自动完成，实际上也是调用String；
+            // var string="123"+"456";//为拼接运算。字符串。
+            // var result=true+false;
+            // var f=true+"hello"; //truehello
+            // var e=123+"1"; //任何值和字符串相加都会转成字符串相加
+            // console.log(e); 
+            // console.log(result);
+            // result=1+2+"3"; // 33 
+            // result="1"+2+3 //123  算术运算符运算顺序从左往右。
+                    //这里是+法转换为string 为1001 减法为99；
+                        // var result=100-"1";console.log(result);  //99
+                        // var result=2*"8";console.log(result); //16
+
+                //任何值做- * /运算时都会自动转换为number
+        
+//一元运算符
+        //可以对一个其他数值类型（非NUMBER）使用+ 将其转换为number 原理和number一样
+        // var a="18";
+        // a=+a;//18 
+        // var res=1+"2"+3; //123
+        // var resd=1+ +"2"+3; //6 一元运算符
+        // console.log(resd);
+//自增自减   
+    // var d=20; d--;// 19;  运算完再-
+    // var d=20; --d; //19   先-再运算
+    // var res= d++ + ++d +d; //21 +  21+1  +22 = 64
+    // console.log(d);
+    // var n1=10;
+    // var n2=20;
+    // var n=n1++; console.log(n) //先运算完再+ n=10
+    // console.log(n1++);
+//逻辑运算
+        //如果对非boolean值进行运算先会转换为boolean再运算
+            // var a=1;
+            // a=!1; //fasle
+            // console.log(a);
+            // var a=true;
+            //  a=!!a;console.log(a); //两次取反不会有变化。
+            // var result=1&&2;console.log(result); //2  如果两个值都为true则返回后边的
+            // var res=0&&2; console.log(res); //0
+            // var result=1||NAN;console.log(result); //空串为false;
+
+
+//赋值运算符
+        //result=5>4  //true;
+        //对于非数值情况 先将其转换为数值再进行boolean运算
+        //    console.log(1>"d"); //false;
+        //    console.log(1>null);//true;
+        //任何值和NAN比较都是false;
+        // console.log("11"<"5"); //false 符号两侧的值都是字符串则根据boolean运算 1<1；
+        // console.log("a"<"b");//true  比较字符串时是根据ASCII编码进行比较；一位一位比较 如果两位一样则比较下一位
+        // console.log("avc"<"dsD");//true
+        // console.log("考">"你");//比较中文没有意义；都是true
+        //比较两个字符串型的数字可能会得到不可预期的结果 一定要转型 要改为"5"
+        // console.log("12355"<5);
+        //    console.log(1>=true) ;//true;
+
+
+//unicode 编码 使用 &#  <h1>&#10</h1>
+
+// 相等运算符
+        // 比较两个值是否相等 使用==
+        // =是赋值运算符
+        //若比较时值不同，则先转换为相同的类型再比较
+    </script>
+</body>
+</html>
