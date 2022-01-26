@@ -466,21 +466,50 @@
  //原型对象就相当于一个公共区域，所有同一个类的实例都可以访问到这个原型对象。
  //当访问对象的一个属性或者方法时 会在对象自身中寻找，如果有直接使用，如果没有则去原型中找
  //以后创建构造函数时 可以将这些对象共有的属性和方法 统一添加到构造函数的原型对象中
-//  function Person(){
-        // 
-//  };
- //向原型对象中添加对象属性
-//  Person.prototype.a=123;
-//此时添加后mc中没有a属性。 在原型对象中 即Person中
- //添加一个方法
-//  Person.prototype.say=function(){
-    //  alert("hello");
-//  }
-// mc.say(); //原型方法
-// var mc=new Person(); //原型对象
-// var mc2=new Person()； //原型对象    公共空间
-//  console.log(Person.prototype);
-// console.log(mc._proto_);
+        //  function Person(){
+                // 
+        //  };
+        //向原型对象中添加对象属性
+        //  Person.prototype.a=123;
+        //此时添加后mc中没有a属性。 在原型对象中 即Person中
+        //添加一个方法
+        //  Person.prototype.say=function(){
+            //  alert("hello");
+        //  }
+        // mc.say(); //原型方法
+        // var mc=new Person(); //原型对象
+        // var mc2=new Person()； //原型对象    公共空间
+        //  console.log(Person.prototype);
+        // console.log(mc._proto_);
+
+
+
+
+
+
+
+//原型对象实例 
+  //创建一个构造函数
+    function Myclass(){
+
+    }
+    //向上述原型中 添加一个name属性
+
+     Myclass.prototype.name="我是原型中的名字";
+
+     var mc= new Myclass();
+     mc.age=18;
+     //使用in检查对象中是否含有某个属性时 如果对象中没有 原型中有原型中有也会返回true
+    //  console.log("name" in mc);
+
+     //可以使用对象的hasOwnproperty（）来检查对象自身中是否含有该属性  只有当对象自身中有该属性时才会返回true
+    //  console.log(mc.hasOwnProperty("age"));
+
+     //原型对象也是对象 所以他也有原型 
+    //   当我们使用一个对象的属性或者方法时，会在自身中寻找。如果自身中有，则直接使用，如果没有则去原型对象中找，如果还没有，去原型对象的原型中找 直到找到object对象的原型。
+    //   console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+
+
 </script>
 </body>
 </html>
