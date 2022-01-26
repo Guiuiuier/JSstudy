@@ -506,10 +506,23 @@
     //  console.log(mc.hasOwnProperty("age"));
 
      //原型对象也是对象 所以他也有原型 
-    //   当我们使用一个对象的属性或者方法时，会在自身中寻找。如果自身中有，则直接使用，如果没有则去原型对象中找，如果还没有，去原型对象的原型中找 直到找到object对象的原型。
+    //   当我们使用一个对象的属性或者方法时，会在自身中寻找。如果自身中有，则直接使用，如果没有则去原型对象中找，如果还没有，去原型对象的原型中找 直到找到object对象的原型 object对象原型没有原型，如果没有返回null。
     //   console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
 
 
+
+
+
+  //创建一个Person实例
+//    function Person(){};
+//   var per=new Person("zhubajie",18,"name");
+  ////tostring()当我们在一个页面中打印一个对象汇总，实际上输出的是对象tostring()方法的返回值 
+  //如果我们希望在输出对象时不输出[object object](在chrome中直接打印person 不变) 可以为对象添加一个toString()方法
+//    per.toString=function(){
+    //    return "我是一个快乐";
+//    };
+//    var result=per.toString() //直接改原型
+//    console.log(per);
 </script>
 </body>
 </html>
