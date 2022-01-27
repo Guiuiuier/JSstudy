@@ -629,13 +629,150 @@
 // 可以在sort中添加一个回调函数 来制定排序规则
 //  需要定义两个形参  浏览器会分别使用数组的元素作为实参去调用函数
 // 根据回调函数的返回值来觉得元素的顺序 如果返回一个大于0的值 则交换位置 如果小于0的值 则元素位置不变 如果返回一个0 则认为两个元素相等 也不交换位置
-arr[5,4];
-arr.sort(function(a,b){
-    console.log("a="+a);
-})
+            // arr[5,4];
+            // arr.sort(function(a,b){
+            //     console.log("a="+a);
+            //     if(a>b)return 1;
+            // })
 
 //即使对纯数字的数组 使用该方法排序时 也会按照unicode编码来排序 所以对数字排序时 可能会得到错误的结果  
 
+
+
+
+//call（） 和 apply 两个都是函数对象的方法 需要通过函数对象来调用
+//都“可以用来代替另一个对象调用一个方法，将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。”
+// 　　fun.call(thisobj,arg1,arg2) ;当后面参数个数确定时用call,参数之间用逗号连接
+
+// 　　fun.apply(thisobj,[arg1,arg2])；当后面参数个数不确定时用apply，参数通过数组形式输入
+//会改变this的指向
+
+// 不同在于
+// call的实参是一个一个传递的
+//apply方法需要将实参封装到一个数组中统一传递
+
+ //this的情况
+ //1。以函数的形式调用时 this指向window
+ //2。方法的形式调用时 指向调用方法的对象
+ //3。构造函数的调用时 指向新创建的对象
+ //4.使用call和apply时 this指定的那个参数
+                // var obj={
+                //   name:"asdad",
+                //   say:function(){
+                //       alert(this.name);
+                //   }
+
+                // };
+                // var obj2={
+                //     name:"asdads"
+
+                // };
+
+                //改变this指向
+                // fun.apply();
+                // fun.call();
+                // fun();
+        // function fun(){
+        // alert(this.name);}
+        // obj.say.apply(obj2);    //改为obj2
+        // fun.call(obj)
+
+
+
+
+
+
+
+//调用函数时 每次会传递两个隐含的参数 
+//  1.函数上下文对象this
+//  2.封装的实参对象 arguments  是一个类数组对象  在调用函数时 所有实参都会在arguments中保存
+// 可以用length获取实参长度 arguments
+//  就算不定义形参也可以通过arguments使用实参 
+// arguments[0] 表示第一个实参
+  //里面有一个callee 对应一个函数对象就是当前正在指向的函数对象
+//    function fun(){
+    //    alert("asd");
+    //    console.log(arguments instanceof Array);
+//    }
+
+
+//date对象表示一个时间
+        //  var d= new Date();
+        //  alert(d);
+        //  var day=d.getFullYear();
+        //  alert(day);
+        //   var time=d.getHours();
+        //   var ds=d.getMinutes();
+        //特别注意 month要+1
+        //   var ds=d.getMonth()
+        //   month+1
+        
+//math 对象  有 math.random  math.abs 等
+
+
+
+//在js中提供了三个包装类
+
+//   string(),将基本数据类型字符串转换为string对象
+//   Number(), 将基本数据类型的数字转换为number对象
+//   Boolean 将基本数据类型的布尔值转换为boolean对象
+
+
+//创建一个number对象
+
+        // var num=new Number(3)；
+        // 向 num中添加一个属性
+        // num.hello="asdasd";
+ //方法和属性只能添加给对象不能添加给基本数据类型 当用基本数据类型的去调用属性和方法时 浏览器会临时使用包装类将其转化为对象 然后再调用的对象属性和方法
+    //调用完毕后将其转换为基本数据类型
+ //  var s=123;
+//  s.hello="你好"；
+ // 基本数据类型会临时转换  将hello属性添加到 对象s中 后被销毁
+//  s=s.toString();
+
+
+
+//字符串方法 
+//  charAt() //可以返回字符串中指定位置的字符 根据索引获取指定字符
+//  str="he";
+//  var str1=str.charAt(0); //不会对原字符串产生影响 只会返回值
+//  console.log(str1)
+
+// charCodeAt() 类似以上 但是返回的是unicode的编码数字
+
+//concat() 可以连接两个或者多个字符串 或者使用+号也一样
+
+        // resuult=str.concat("nihao","asd"); //不会对原字符串产生影响
+
+
+
+// indexOf 检索字符串中是否含有指定内容 如果有则返回第一次出现的索引 
+//没有返回-1  可以指定一个第二个参数 制定开始查找的位置 从前往后找
+    // str.indexOf("1 //值 假设要搜索t 则输入t")；
+
+//lastindexof() 该方法和indexof 用法一样 不同在于从后边开始检索
+
+
+//substring  用来截取一个字符串 与slice类似   参数 第一个：开始截取位置的索引 包括开始位置  第二个 结束位置的索引 不包括结束为止
+// 不同在于不可以传-值 如果传递了-值默认取0 并且他还自动调整位置 如果第二个参数小于第一个则自动交换
+
+//substr //用来截取字符串  参数:截取开始的位置索引， 截取的长度
+//   str.substr(3,2);
+
+
+//split 将一个字符串拆分为一个数组 如果是空字符串作为参数 会将每个字符都拆分成一个数组的元素
+//  str.spilt("");
+  //参数：需要一个字符串作为参数 将会根据改字符串去拆分数组
+//   str="asd,asdsad,asdasd";
+//   str.split(","); 根据逗号拆分为数组
+// console.log("result.length";)
+
+  //toUppercase 将一个字符串转换为大写并返回
+//    str.touppercase()
+//    str="adad";
+    // tolowercase 转换为小写并且返回
+
 </script>
+
 </body>
 </html>
