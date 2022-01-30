@@ -1629,3 +1629,85 @@ window.onload=function(){
 </body>
 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+      <div id="box1">
+        <img src="img/1.jpg" alt="">
+        <button type="button" id="prior">上一张</button>
+        <button type="button" id="next">下一张</button>
+        <p id="neirong"></p>
+
+         <p id="xieyi" style="margin:0 auto;overflow: scroll;height: 500px;  width: 200px;background-color: #bbffaa;">
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
+         </p>
+         <input type="checkbox" style="margin: 0 auto;width: 100px;" disabled="disabled"> 
+         <input type="button" value="注册" id="zhuce" disabled="disabled">
+      </div>
+</body>
+<script>
+
+
+
+
+
+
+
+
+ var prior=document.getElementById("prior");
+ var next=document.getElementById("next");
+ var index=0;
+ window.onload=function(){
+   //获取img标签
+   var imgtag=document.getElementsByTagName("img")[0];
+  //  console.log(imgtag);
+     var imgsrc=['img/1.jpg','img/2.jpg','img/323.jpg','img/11.jpg']
+     var ptag=document.getElementById("neirong");
+    //  console.log(ptag);
+     var zongshu=imgsrc.length;
+     ptag.innerHTML="当前一共"+zongshu+"张"+"  当前在第"+(index+1)+"页";
+     prior.onclick=function(){
+        if(index>0){
+          index--
+          imgtag.src=imgsrc[index];
+          ptag.innerHTML="当前一共"+zongshu+"张"+"  当前在第"+(index+1)+"页";
+        }
+     }
+     next.onclick=function(){
+       if(index<imgsrc.length-1){
+         index++;
+         imgtag.src=imgsrc[index];
+         console.log(index);
+         ptag.innerHTML="当前一共"+zongshu+"张"+"  当前在第"+(index+1)+"页";
+
+       }
+     }
+    
+ } 
+
+
+ window.onload=function(){
+  var xieyi=document.getElementById("xieyi");
+  var inputs=document.getElementsByTagName("input");
+  xieyi.onscroll=function(){
+    if(xieyi.scrollHeight-xieyi.scrollTop==xieyi.clientHeight){
+      console.log("hello");
+      inputs[0].disabled=false;
+      inputs[1].disabled=false;
+    } 
+  }
+ };
+</script>
+</html>
