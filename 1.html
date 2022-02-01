@@ -1,5 +1,1651 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <style>
+        * {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style> -->
+    <div>
+        <!-- 图片练习 -->
+        <!-- <p id="imgshu">当前共几张，现在是第几章</p>
+   <img src="1.jpg" alt="">
+ <button value="上一张" id="prior">上一张</button>
+ <button value="下一张" id="next">下一张</button> -->
+
+
+
+        <!-- 全选练习-->
+        <!-- <input type="checkbox" value="全选/全不选" id="quanxuanquanbuxuan" onclick="quanxaunquanbuxuan">全选/全不选
+        <br />
+        <input type="checkbox" name="d" value="足球 ">足球
+        <input type="checkbox" name="d" value="篮球">篮球
+        <input type="checkbox" name="d" value="羽毛球"> 羽毛球
+        <br />
+        <input type="button" id="quanxuan" value="全选">全选
+        <input type="button" id="quanbuxuan" value="全不选">全不选
+        <input type="button" id="fanxuan" value="反选">反选
+        <input type="button" id="tijiao" value="提交">提交 -->
+
+
+        
+
+
+
+
+
+        <!-- 增删改查练习 -->
+        <!-- <table>
+         <tr>
+             <td><div></div></td>
+         </tr>
+        </table>
+
+         table里面要有 tr 和td 否则不显示 -->
+        <!-- <table id="tableid">
+        
+                <div class="fu">
+                <div name="mingzi">名字</div>
+                <div name="wenzi">内容</div>
+                <a href="####">删除</a>
+            </div>
+            <div class="fu">
+                <div name="mingzi">名字</div>
+                <div name="wenzi">内容</div>
+                <a href="####">删除</a>
+            </div>
+            <div class="fu">
+                <div name="mingzi">名字</div>
+                <div name="wenzi">内容</div>
+                <a href="####">删除</a>
+            </div>
+         </table>
+            <input type="text" name="tianjia" id="tianjia">添加内容
+            <input type="text" name="tjwenzi" id="tjwenzi">添加内容
+            <a type="button" id="tijiaoneirong" > 提交</a>
+
+
+    </div> -->
+
+        <!-- 使用DOM操作css -->
+        <!-- <style>
+            #box1{
+                width: 100px;
+                background-color: navy;
+                height: 100px;
+            }
+        </style>
+        <button id="bt1">点我一下</button>
+        <div id="box1"></div> -->
+
+  <!-- 滚动条练习 -->
+  <!-- <style>
+      #info{
+          width: 300px;
+          height: 500px;
+          background-color: #bfa;
+          overflow: scroll;
+      }
+  </style>
+    <h3>欢迎注册</h3>
+    <p id="info">
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认  亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认  亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+        亲爱的用户，请仔细阅读以下协议，如果你不阅读则无法确认
+    </p>
+    
+    <input type="checkbox" id="box1" disabled="disabled">disable为不可用状态我已经仔细阅读协议，一定遵守
+    <input type="submit" value="注册" disabled="disabled"> -->
+
+
+
+
+
+    <!-- 获取当前鼠标位置 -->
+    <!-- <style>
+        #areaDiv{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        #showMsg{
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+     <div id="areaDiv"></div>
+     <div id="showMsg"></div> -->
+
+
+     <!-- div跟随鼠标移动 -->
+     <!-- <style>
+         *{
+             height: 1000px;
+         }
+         #box1{
+             width: 100px;
+             height: 100px;
+             background-color: red;
+             /* 开启box1绝对定位; */
+             position: absolute;
+         }
+     </style>
+     <div id="box1"></div> -->
+        
+
+      <!-- 事件冒泡 -->
+<style>
+      #box1{
+          width:200px;
+          height: 200px;
+          background-color: #bfa;
+      }
+</style>
+<div id="box1"></div>
+    <script>
+// //跟随鼠标移动
+// window.onload=function(){
+//     //让鼠标跟随移动
+//     var box1=document.getElementById("box1");
+//     //绑定鼠标移动事件
+//     //此时 box1改为document后就可以移动了
+//     document.onmousemove=function(event){
+//         // 解决兼容问题
+//         event=event||window.event;
+//         //获取鼠标坐标
+//         var left=event.clientX;
+//         var top=event.clientY;
+//         //设置div偏移量 只对开启定位的起作用
+//         box1.style.left=left+"px";
+//         box1.style.top=top+"px";
+//         //此时无法向左移动因为超过box1的位置了 不能左移动 不触发
+//     }
+// }
+
+
+
+
+//获取当前鼠标位置
+
+// window.onload=function(){
+//      var areaDiv=document.getElementById("areaDiv");
+//      var showMsg=document.getElementById("showMsg");
+//      //onmousemove鼠标在元素中移动时触发
+//     //事件对象 当响应函数被触发时 浏览器每次都会将一个事件对象作为实参传递进响应函数
+//     //event叫啥都行
+//     //在事件对象中封装了当前事件相关的一切信息:例如 鼠标位置等
+//      areaDiv.onmousemove=function(event){
+//          // ie不兼容 可以这样改进
+//          //  在IE8中 响应函数被触发时 浏览器不会传递事件对象
+//          //是将对象作为window对象的属性保存的
+//         //  if (!event) {
+//             //  event = window.event;
+//         //  }
+//         //  event=event||window.event;
+//         // 在showMsg中显示鼠标的坐标
+//         //clientX可以获取鼠标指针的水平坐标
+//         //clientY可以获取鼠标的垂直坐标
+//         var x=event.clientX;
+//         var y=event.clientY;
+//                 //alert("x="+x+",y="+y);
+//         showMsg.innerHTML="x="+x+",y="+y;
+//      }      
+
+// }
+
+
+
+
+
+// 滚动条练习
+//   window.onload=function(){
+//       //获取两个表单项
+//     var inputs=document.getElementsByTagName("input");
+//            //当元素滚动条滚动到底时可用，改时间会在元素的滚动条滚动时出发
+//            //onscroll
+//                     //    var box1=document.getElementById("box1");
+//            var info=document.getElementById("info");
+//            info.onscroll=function(){
+//             //检查垂直滚动条是否垂直到底
+//              if(info.scrollHeight-info.scrollTop==info.clientHeight){
+//                 //到底后使表单可用
+//                 //true禁用 false不禁用
+//                 inputs[0].disabled=false;
+//                 inputs[1].disabled=false;
+//                          // box1.style.width="200px";
+//              }
+//            }
+       
+//   }
+
+
+//使用DOM操作css
+//  window.onload=function(){
+//      //点击按钮后修改box1大小
+//      var box1=document.getElementById("box1");
+//      var bt1=document.getElementById("bt1");
+//      bt1.onclick=function(){
+         //修改box1的宽度
+        //   通过修改js修改元素的样式
+        //   语法: 元素.style.样式名=样式值
+        //读取box1样式
+            // 语法:元素.style.样式名\
+            //通过style属性设置和读取的都是内联样式 无法读取样式表中的样式 外部的不行         // box1.style.backgroundColor="yellow"; 内容中的才可以" <div style="color:red">
+        //样式是有优先级的  如果在样式汇总写了 !important 则此时样式会有最高 通过js也不能覆盖该样式
+        // box1.style.width="300px";  //需要是一个字符串""
+        // box1.style.backgroundColor="yellow"; //含有- 是不合法的要是用驼峰法才能改进background-color
+        // alert(box1.style.height);
+
+
+
+        //获取样式
+        // window.onload=function(){
+            //  获取元素当前显示样式
+            // 语法:元素.currentStyle.样式名
+            // CurrentStyle只有ie浏览器支持  其他浏览器不支持
+            // 在其他浏览器中可以使用，getComputedStyle() 这个方法获取当前样式
+            // 两个参数 第一个参数:要获取样式的元素 第二个:可以传递一个伪元素，一般传递null
+            // alert(getComputedStyle(box1,null).width);
+            //该方法会返回一个对象，对象中封装了当前元素的对应样式，如果没有设置样式，会获取到真是的值而不是默认值
+            // 如果没设置width 他不会获取到auto而是一个长度
+
+            // 通过currentStyle和getcomputedstyle()读取到的样式都是只读的
+            //如果要修改必须通过style属性
+
+            // 处理ie和其他浏览器兼容问题
+            //  function getstyle(obj,name){
+            //      if(window.getComputedStyle){
+            //          return getComputedStyle(obj,null)[name];
+            //      }else {
+            //          return obj.currentstyle[name];
+            //      }
+            //  }
+        // }
+//     }
+//  }
+
+
+
+
+
+
+
+
+
+
+//增删改查练习
+//删除的响应函数 可以在改进调用
+// function delA(){
+//         // alert("d");
+//         //点击超链接后需要删除超链接所在的那行
+//         //获取当前div 
+//         var div= this.parentNode;
+//         //conform 用于弹出一个带有确认和取消按钮的框
+//         var flag=confirm("确定?");
+//         if(flag){
+//                //删除当前div
+//         div.parentNode.removeChild(div); 
+//         }
+//     }
+
+
+
+// 内容开始
+//获取所有超链接
+// var allA=document.getElementsByTagName("a");
+// //为每个超链接绑定一个单击函数  响应函数可以通过过return false来取消默认行为
+// for(var i=0;i<allA.length;i++){
+//     allA[i].onclick=function(){
+//         // alert("d");
+//         //点击超链接后需要删除超链接所在的那行
+//         //获取当前div 
+//         var div= this.parentNode;
+//         //conform 用于弹出一个带有确认和取消按钮的框
+//         var flag=confirm("确定?");
+//         if(flag){
+//                //删除当前div
+//         div.parentNode.removeChild(div); 
+//         }
+
+//     }
+// //添加信息功能
+//     var add=document.getElementById("tijiaoneirong");
+//     add.onclick=function(){
+//      //获取添加信息1
+//       var name=document.getElementById("tianjia");
+//      //获取添加信息2
+//      var name1=document.getElementById("tjwenzi");
+//      //获取按钮
+//      var name2=document.getElementById("tijiaoneiirong")
+    //  <div id="neirng">
+    //             <div name="mingzi">名字</div>
+    //             <div name="wenzi">内容</div>
+    //             <a href="####">删除</a>
+    //         </div>
+            //获取到的信息保存的上边
+
+
+                    //创建div
+                    // var fu=document.createElement("div");
+                                //以下方法太难 代码也不好看 把创建结点的方法改进
+
+                    // //创建两个div
+                    // var mingzitd=document.createElement("div")
+                    // var wenzitd=document.createElement("div")
+                    // //创建一个a标签
+                    // var atd=document.createElement("a");
+                    // //创建文本节点
+                    // var mingzi=document.createTextNode(name.value);
+                    // var wenzi=document.createTextNode(name1.value);
+                    // var deleted=document.createTextNode("删除");
+
+                    // //将文本全部拼到一起 mingzi内容添加到各自div中
+                    //   mingzitd.appendChild(mingzi);
+                    //   wenzitd.appendChild(wenzi);
+                    //   atd.appendChild(deleted);
+
+                    // //向a中添加href属性
+                    // atd.href="###";
+
+                    // //将文本添加到fu中
+                    // fu.appendChild(mingzitd);
+                    // fu.appendChild(wenzitd);
+                    // //将a标签添加文本
+                    // atd.appendChild(deleted);
+                    // fu.appendChild(atd);
+// //添加一个新的绑定函数 对应下边tips  此时直接复制粘贴上边的函数 太麻烦需要在外边调用
+// atd.onclick=function(){
+//         // alert("d");
+//         //点击超链接后需要删除超链接所在的那行
+//         //获取当前div 
+//         var div= this.parentNode;
+//         //conform 用于弹出一个带有确认和取消按钮的框
+//         var flag=confirm("确定?");
+//         if(flag){
+//                //删除当前div
+//         div.parentNode.removeChild(div); 
+//         }
+//     }
+                    //以上方法太难 代码也不好看 把创建结点的方法改进
+
+           //改进 可以不写
+        //    设置内容这样最好。 
+        //   fu.innerHTML="<div>"+mingzitd"</div>"+
+        //                 "<div></div>"+
+        //                 "<a>"+deleted+"</a>";
+                        // 在为刚刚添加的a元素绑定单击响应内容
+        //改进
+
+
+
+  //获取父元素
+  //虽然在这里是添加到tableid里但是会有一个隐患 就是成为兄弟节点 不是包含在里面 如果是样式的话不生效
+//  var tableid=document.getElementById("tableid");
+ //改进内容/
+            //  var tbody=tableid.getElementsByClassName("tbody")[0]
+            // //  console.log(nsss);
+
+            //  //将内容添加进tbody中 
+            //  tbody.appendChild(tr);
+            //  下边就不要了
+ //改进内容//
+ //将fu添加到table中
+//   tableid.appendChild(fu);
+//     }
+
+    //这边添加新内容后 添加要单独绑定一次 否则不响应删除
+// }
+
+
+
+
+
+
+
+
+
+// 创建一个节点 添加到#city下
+
+//创建一个元素节点 需要一个标签名作为参数 将会根据该标签名创建对象 并将创建好的对象作为返回值
+// document.createElement();
+//创建一个文本节点 需要一个文本作为参数
+// document.createTextNode()
+
+//将个结点作为某个标签的子节点
+//用法: 向一个父节点添加一个新的节点 父节点.appendchild(子节点)
+//  appendchild()
+//  li.appendChild(todo);
+
+//parentNode 查询父节点
+//insertBefore 在指定子节点之前插入新的子节点
+//removeChild() 可以删除一个子节点  语法:父节点.removeChild(子节点)  或者更好的  子节点.parentnode.remove(子节点);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  document.documentElement  / /保存的是html根标签
+// var all=document.all; //表示页面中的所有元素
+// console.log(all);
+
+        //根据class属性值查询一组元素的节点对象
+        // var a=document.getElementsByClassName  //不支持ie8以下的浏览器
+
+        // 获取calss为box1中的所有div
+        // document.querySelector();  // 是getelementbyclassname的替代对象 需要一个选择器的字符串作为参数 可以根据一个css选择器来查询一个元素节点对象
+        // document.querySelector(".box1 div");  //使用该方法总会返回一个唯一的元素，如果满足条件的元素有多个那么它只会返回第一个
+        // document.querySelectorAll() 可以返回所有元素
+
+
+
+
+
+
+
+
+
+
+
+        //浏览器加载页面 是按照自上向下加载 读取一行运行一行
+        //所以script要放在html代码下边
+
+
+
+
+        //获取对象
+        // var dd=document.getElementById("dd");
+        // console.log(dd);
+        // dd.innerHTML="sdsd";
+        //
+
+        //处理事件
+
+
+        //单击响应函数
+        // var btn=document.getElementById("dd");
+        // btn.onclick=function(){
+        //     alert("ds");
+        // }
+
+
+        //onload事件是在全部加载完后才运行 为window绑定一个onload事件
+        // window.onload=function(){
+        //     var btn=document.getElementById("dd");
+        //     btn.onclick=function(){
+        //         alert("dsd");
+        //     }
+        // }
+
+
+
+        // GetElementsbyTagName() 可以根据标签名来获取一组元素节点对象，这个方法给我们返回了一个类数组对象，所有查询到的元素都会封装到对象中
+        //即使查询到的元素只有一个  也会封装到数组中
+
+        // var lis=document.getElementsByTagName("dd");
+
+        // for(var i=0;i<lis.length;i++){
+        //     alert(lis[i].innerHTML);
+        // }
+
+        //查找name=gender的所有节点  返回一个类数组
+        // INNERHTML用于获取元素内部的HTML代码
+        //对于自结束标签这个元素没有意义 innerhtml
+        //     var inputs=document.getElementsByName("gender")
+        //  for(var i=0;i<inputs.length;i++){
+        //       alert(inputs[i].innerHTML);
+        //     //   console.log(1);
+        //  }
+
+        //所有元素都能读取属性值 除了 class  例如 input.class 因为这是保留字class  写成inputclassname可以
+
+
+
+
+
+        //图片切换
+        //  window.onload=function(){
+        //      //获取当前张数和页数
+        //      var imgshu=document.getElementById("imgshu");
+        //      var weizhi=document.getElementById("weizhi");
+        //      var prior=document.getElementById("prior");
+        //      var next=document.getElementById("next");
+        //      //要切换图片就是修改src的属性
+        //      //获取img标签
+        //      var img=document.getElementsByTagName("img")[0];
+        //      console.log(img);
+        //      //创建数组保存路径
+        //     var tupiansrc=["1.jpg","2.jpg"];
+        //     //创建一个变量保存当前图片的索引
+        //     var index=0;
+        //      prior.onclick=function(){
+        //          if(index>0){
+        //            index--;
+        //            img.src=tupiansrc[index];
+        //             //当点击按钮时 应该重新设置 index 否则 无法生效
+        //       imgshu.innerHTML="当前共"+tupiansrc.length+"张"+"当前是第"+(index+1)+"张";
+        //          }
+        //      }
+        //      next.onclick=function(){
+
+        //         //修改元素属性  元素.属性=属性值
+        //         if(index<tupiansrc.length-1){
+        //         index++;
+        //         img.src=tupiansrc[index];
+        //      //当点击按钮时 应该重新设置 index 否则 无法生效
+        //      imgshu.innerHTML="当前共"+tupiansrc.length+"张"+"当前是第"+(index+1)+"张";}
+        //      };
+        //      //当点击按钮时 应该重新设置 index 否则 无法生效
+        //       imgshu.innerHTML="当前共"+tupiansrc.length+"张"+"当前是第"+(index+1)+"张";
+        //  }
+
+
+
+
+
+
+        //查找#city下所有li节点
+        // var  city=document.getElementById("city");
+        // var clis=city.getElementsByTagName("li");
+
+        // for(var i=0;i<clis.length;i++){
+        //     alert(clis[i].innerHTML);
+        // }
+
+        //返回city所有子节点
+
+        // var btn5=document.getElementById("btn5"); 
+        // btn5.onclick=function(){
+        //     var city=document.getElementById("city");
+        //     //返回city所有子节点
+        //      //childNodes 不是获取的元素  会返回包括获取文本节点在内的所有节点 包括空格 
+        //      //在ie8级以下的浏览器不会将空白当成子节点 
+        // //     var  cns= city.childNodes;
+        // // }
+        //children属性会获取当前元素的所有子元素 不包括文本 所有浏览器兼容
+        //firstnodes 返回当前元素的第一个子节点 包括空白文本节点
+        //firstelementchild 返回当前元素的第一个子元素不会获取到文本  兼容性不好 ie8下
+        //lastchild 表示当前节点的最后一个子节点 包括空白文本节点
+        //parentNode  表示当前节点的父节点
+        //previoussibling 表示当前节点的前一个兄弟节点 ie8下不支持
+        //nextsibling表示当前节点的下一个兄弟节点
+        //innerText 和html相似 不同在于会将html去除 只获取文本
+
+
+
+
+
+
+
+        //全选练习
+
+        // window.onload = function () {
+        //     var quanxuan = document.getElementById("quanxuan");
+        //     var fanxuan = document.getElementById("fanxuan");
+        //     var quanbuxuan = document.getElementById("quanbuxuan");
+        //     var tijiao = document.getElementById("tijiao");
+        //     //获取name名为d的标签name
+        //     var item = document.getElementsByName("d");
+        //     quanxuan.onclick = function () {
+        //         for (var i = 0; i < item.length; i++) {
+        //             // checked=true/false  表示选中状态
+        //             //   遍历item
+        //             item[i].checked = true;
+        //         }
+
+        //         //这里是为全选/全不选按钮准备的 当全选 全部选时 全选/全部选状态不会取消
+        //         //将全选全不选设置为选中
+        //         quanxuanquanbuxuan.checked = true;
+
+        //     };
+
+
+        //     //全不选
+        //     quanbuxuan.onclick = function () {
+        //         for (var i = 0; i < item.length; i++) {
+        //             // checked=true/false  表示选中状态
+        //             //   遍历item
+        //             item[i].checked = false;
+        //         }
+
+        //         //这里是为全选/全不选按钮准备的 当全选 全部选时 全选/全部选状态不会取消
+        //         //将全选全不选设置为选中
+        //         quanxuanquanbuxuan.checked = false;
+        //     };
+
+        //     //反选按钮 选中的变成没选中 没选中的变成选中
+        //     fanxuan.onclick = function () {
+        //         for (var i = 0; i < item.length; i++) {
+        //             //判断多选框状态
+        //             //     if(item[i].checked){
+        //             //         item[i].checked=false;
+        //             //     }
+        //             //     else{
+        //             //         item[i].checked=true;
+        //             //     }
+        //             // }
+        //             //  或者取反！
+        //             item[i].checked = !item[i].checked;
+
+
+
+        //             //在反选时也要判断四个多选框有没有选中 用到全选全不选
+        //             //将全选/不选 按钮为选中状态
+        //             quanxuanquanbuxuan.checked = true;
+        //             //判断四个多选框是否全选 只要有一个没选中句
+        //             for (var j = 0; j < item.length; j++) {
+        //                 if (!item[j].checked) {
+        //                     quanxuanquanbuxuan.checked = false;
+
+        //                     //一旦进入判断 不用再进行循环 已经的出结果
+        //                     break;
+        //                 }
+        //             }
+        //         };
+        //     };
+
+
+        //     tijiao.onclick = function () {
+        //         for (var i = 0; i < item.length; i++) {
+        //             if (item[i].checked) {
+        //                 alert(item[i].value);
+        //             } else {
+        //                 //   alert("快选");
+        //             }
+        //         }
+        //     }
+
+
+
+
+            //全选全不选的多选框
+            //如果四个全选中 全选和全不选应该也要有状态
+            //如果四个都没选中 全选和全选也应该有状态
+
+            //当其选中时 其余的也选中 当他取消时 其余的也取消
+        //     var quanxuanquanbuxuan = document.getElementById("quanxuanquanbuxuan");
+        //     quanxuanquanbuxuan.onclick = function () {
+        //         //设置多选框选中状态  在这里不要判断checked是否是false 否则反选不对
+        //         for (var i = 0; i < item.length; i++) {
+        //             item[i].checked = this.checked;
+        //         }
+        //         //如果四个全都选中  全选全不选也应该选中
+        //         for (var i = 0; i < item.length; i++) {
+        //             item[i].onclick = function () {
+        //                 //在这里为什么设置为true 首先要点击进入按钮判断才可以设置为true 如果我们下边for循环 if条件没满足的时候
+        //                 //则证明目前就是全选状态 如果进入判断了 就不是全选
+
+
+        //                 //将全选/不选 按钮为选中状态
+        //                 quanxuanquanbuxuan.checked = true;
+        //                 //判断四个多选框是否全选 只要有一个没选中句
+        //                 for (var j = 0; j < item.length; j++) {
+        //                     if (!item[j].checked) {
+        //                         quanxuanquanbuxuan.checked = false;
+
+        //                         //一旦进入判断 不用再进行循环 已经的出结果
+        //                         break;
+        //                     }
+        //                 }
+
+        //             }
+        //         }
+
+        //     }
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+        //变量的命名规则
+        // 字母，数字，"_","$"
+        // 不能以数字
+        // 不能是js标准中的关键字或者保留字
+        //驼峰命名法  worldHello
+        //所有UTF-8的内容都可以作为标识变量包括中文
+        //数据类型
+        //String,number,boolean,null,undefined(前几种均为基本数据类型),0bject(引用数据类型) 后新增一个 symbol
+        //在字符串中使用\作为转义字符
+        //   在js中所有数值都是number类型 包括整数和float
+        //   var a="123" String;
+        //   var a=123 Number
+        //   var a="123.3" number
+
+        // typeof 为检查类型  
+        // typeof a;
+        // console.log(typeof a);
+        // Number.MAX_VALUE 
+        //    MIN  表示最大值和最小值
+        // typeof在检查infinted 和 -Infinity 也为number 正无穷和负无穷
+        // 若 "avc"*"dsd" 返回NAN  是一个特殊数字表示不是数字 NOT A NUMBER
+        // 整数运算基本保证精度 浮点不一定
+        // 使用typeof检查null时返回 Object
+        //强制类型转换
+        //  toString()该方法不影响原来的变量 转换结果返回 null和undefined没有该方法 会报错
+        // var a=21； a.tostring();转换为字符串
+        // a=a.tostring()；
+        // 方法二,调用 string(参数) 也可转为字符串  其中 null和undefined 也可以使用  对于number和boolean实际上就是调用tostring()
+
+
+        // 转换数值类型
+        // 使用number（）；
+        // var a="avc";
+        // a=Number(a); 结果为NaN
+        //若有非数值内容转为"NaN" 非数值都转为这个
+        //空串转为 a=""  0
+        //  true->1 false->0;
+        //若为纯数字的字符串"123" ->123
+        //undefined->"nan"
+        //方法二, 使用 parseInt(),parsefloat() 转换为数值和浮点数   将有效数字取出，但如果是 var a="b234T" 为"NAN var a="3332T" = 3332
+        // 如果对非字符串类型使用以上两种方法先转换为STring再转换为数字
+        // 在js中表示16进制数字为0X开头
+        // 8进制为0开头  但是有些浏览器会将8进制当成十进制来算  例如  070=70
+        // 2进制为0b开头但不是所有浏览器都支持
+        // 以上输出结果都是十进制数
+        // 可以在parseint中指定进制数 在第二个参数中可以解决 parseint（a,0x);
+
+
+        //调用boolean（）将其转化为boolean值
+        //除了0和NAN,null,空串，undefined 其余的全为true 对象也为true(object)
+        //    var a=123;
+        //    var b=Infinity;
+        //    var c=null;
+        //    console.log(Boolean(a));
+        //    console.log(Boolean(b));
+        //    console.log(Boolean(c));
+
+
+        //运算符运算，typeof也为运算符，将其类型以字符串形式返回。
+        //算数运算符，当对不是Number类型的值进行运算时，会将这些值转换为Number然后再运算
+        //例如，true+false= 1+0；
+        //任何值和NAN做运算最后结果都为NAN；
+        // var c=133;
+        // c=c+""; //可以用这种方法将任意数据类型加一个空串即可将其转为String 是一种隐式类型转换，由浏览器自动完成，实际上也是调用String；
+        // var string="123"+"456";//为拼接运算。字符串。
+        // var result=true+false;
+        // var f=true+"hello"; //truehello
+        // var e=123+"1"; //任何值和字符串相加都会转成字符串相加
+        // console.log(e); 
+        // console.log(result);
+        // result=1+2+"3"; // 33 
+        // result="1"+2+3 //123  算术运算符运算顺序从左往右。
+        //这里是+法转换为string 为1001 减法为99；
+        // var result=100-"1";console.log(result);  //99
+        // var result=2*"8";console.log(result); //16
+
+        //任何值做- * /运算时都会自动转换为number
+
+        //一元运算符
+        //可以对一个其他数值类型（非NUMBER）使用+ 将其转换为number 原理和number一样
+        // var a="18";
+        // a=+a;//18 
+        // var res=1+"2"+3; //123
+        // var resd=1+ +"2"+3; //6 一元运算符
+        // console.log(resd);
+        //自增自减   
+        // var d=20; d--;// 19;  运算完再-
+        // var d=20; --d; //19   先-再运算
+        // var res= d++ + ++d +d; //21 +  21+1  +22 = 64
+        // console.log(d);
+        // var n1=10;
+        // var n2=20;
+        // var n=n1++; console.log(n) //先运算完再+ n=10
+        // console.log(n1++);
+        //逻辑运算
+        //如果对非boolean值进行运算先会转换为boolean再运算
+        // var a=1;
+        // a=!1; //fasle
+        // console.log(a);
+        // var a=true;
+        //  a=!!a;console.log(a); //两次取反不会有变化。
+        // var result=1&&2;console.log(result); //2  如果两个值都为true则返回后边的
+        // var res=0&&2; console.log(res); //0
+        // var result=1||NAN;console.log(result); //空串为false;
+
+
+        //赋值运算符
+        //result=5>4  //true;
+        //对于非数值情况 先将其转换为数值再进行boolean运算
+        //    console.log(1>"d"); //false;
+        //    console.log(1>null);//true;
+        //任何值和NAN比较都是false;
+        // console.log("11"<"5"); //false 符号两侧的值都是字符串则根据boolean运算 1<1；
+        // console.log("a"<"b");//true  比较字符串时是根据ASCII编码进行比较；一位一位比较 如果两位一样则比较下一位
+        // console.log("avc"<"dsD");//true
+        // console.log("考">"你");//比较中文没有意义；都是true
+        //比较两个字符串型的数字可能会得到不可预期的结果 一定要转型 要改为"5"
+        // console.log("12355"<5);
+        //    console.log(1>=true) ;//true;
+
+
+        //unicode 编码 使用 &#  <h1>&#10</h1>
+
+        // 相等运算符
+        // 比较两个值是否相等 使用==
+        // =是赋值运算符
+        //若比较时值不同，则先转换为相同的类型再比较
+        // console.log(true=="1");//true;
+        // console.log(null==0);//false; 没转换成 特殊情况 如果null转换成number就相等
+        // undefined 衍生自null
+        // 当两个作比较时返回true  console.log(undefinded==null) //true
+        //nan 不和任何值相等包括他本身
+        // console.log(NAN==NAN);//fasle;
+        //判断B的值是不是NAN
+        //   可以通过isNan()函数判断是不是NAN
+        // var b=NaN;
+        //  console.log(Nan==Nan)//不可以使用这种方式
+        // console.log(isNaN(b));//true;
+        //===全等运算符。  不同在于，他会判断值的类型是不是一样若值一样  类型不一样则返回false；
+        //不会进行转换。
+
+        //条件运算符
+        //   三元运算符
+        //   条件表达式?语句1:语句2
+        // 若为true执行1 false执行2
+        // var max=a>b?(a>c?a:c):(b>c?b:c);
+        // 运算符优先级
+        //运算符 , 用于分割语句
+        // 使用时可以同时声明多个变量
+        // var a=1,b=2;
+        // js运算符先乘除后加减
+        //   运算符                                   	描述
+        // . [] ()           	                字段访问、数组下标、函数调用以及表达式分组
+        // ++ -- - ~ ! delete new typeof void	一元运算符、返回数据类型、对象创建、未定义值
+        // * / %	                            乘法、除法、取模
+        // + - +	                            加法、减法、字符串连接
+        // << >> >>>	                        移位
+        // < <= > >= instanceof	                小于、小于等于、大于、大于等于、instanceof
+        // == != === !==	                    等于、不等于、严格相等、非严格相等
+        // &	                                按位与
+        // ^	                                按位异或
+        // |	                                按位或
+        // &&	                                逻辑与
+        // ||	                                逻辑或
+        // ?:	                                条件
+        // = oP=	                            赋值、运算赋值
+        // ,	                                多重求值
+
+        //条件判断语句
+        // if(){
+
+        // }else{
+
+        // }
+
+        // if(){
+
+        // }else if(){1
+
+
+        // }else if(){
+
+        // }else{
+
+        // }
+
+        //键盘输入函数
+        //  prompt() 为键盘输入函数  返回的值是string类型的
+        // var a=prompt(); prompt("请输入");
+        // console.log(a);
+
+
+
+        //条件分支 switch
+        //假设第一条合格了 后面的全合格，进行全等比较。 defualt默认 若都不满足则之间显示默认的 break可以用来退出switch语句 就是当满足某个时则就停止后面的
+        // switch(num){
+        //     case 语句:
+        // }
+
+        //while 循环
+        // while（条件表达式）{
+        // 语句
+        // }
+        // 先对条件表达式进行求值判断，如果为true之行判断，如果执行完毕后继续对表达式进行判断，如果为true继续执行循环体以此类推
+        //如果为false 则终止循环  先判断后执行
+
+        // do...while循环
+        //  do{
+        // 语句              //先执行后判断
+        //  }while（条件判断）；  //无论条件是否满足都先执行一次。
+
+
+        //创建对象  使用new关键字调用函数，
+        // 语法:对象.属性名
+
+        // 这种也可创建一个对象
+        // var obj={}；
+        // 可以直接指定其属性  使用,隔开
+        // var ov={
+        // name:"asd",
+        // wo:"asdasd"};
+
+        // var obj=new Object();
+        // obj.name="123";
+        // console.log(obj.name);
+        // obj["123"]=789; //可以修改属性名
+
+        // 也可以继承对象
+        // var obj= new Object();
+        // obj.name="qwe";
+        // obj.qwe="qwee";
+        // var obj2= obj;
+        // console.log(obj2);
+        //in 属性  可以检查一个对象中是否有指定属性
+        // console.log("test" in obj);
+
+
+        //js基本数据类型的变量都是保存在栈内存中的， 值和值之间是独立存在的，修改一个变量不会改变其他变量。
+        //对象是保存到堆内存中的，每创建一个新的对象，就会在堆内存中开辟出一个新的空间
+        // 而变量保存的是对象的内存地址。如果两个变量保存的是同一个对象的引用，当一个通过一个变量修改属性时，另一个也会受到影响
+
+        //当比较两个基本上数据的类型值是就是比较值
+        //当比较两个引用数据对象时，他们比较的是对象的内存地址
+        //如果两个对象是一摸一样的 但是地址不同，还是会返回false
+
+
+        //函数的参数
+        //形参
+        //  function sum(a,b){
+
+        //  }
+        // sum(1,2);
+        //调用函数时，调用函数的解析器不会检查实参的类型，可能会接收到非法的参数，如果可以要对参数类型尽心检查
+        //调用函数时也不会检查实参的数量；多余的实参不会被赋值
+        //如果实参数量少于形参数量，少的那个形参会是未定义状态
+        //函数的实参可以是任意的数据类型
+        //实参可以是函数也可以是对象。
+        //返回值可以是任意的数据类型也可以是一个对象
+
+
+
+
+        // 立即执行函数
+        //  函数定义完立即被调用
+        //  立即执行函数往往只会执行一次
+        //   (function(){
+        //   alert("woshi");
+        //   })();
+        //   对象的属性值可以是任何类型，也可以是个函数
+        //   obj.sayName=function (){
+        //   console.log("obj.name");
+        //   }
+        //   obj.sayName(); //调方法；
+
+        //  function fun(){
+        //   console.log(obj.name);
+        //  }
+        //   fun();  //调函数 没有本质的差别
+
+        //  var obj={
+        //  name:"asd",
+        //  sayname:function(){
+        //  console.log("ad");
+        //  }
+        //  }
+        //  obj.sayname();
+
+
+        //枚举对象中的属性
+        //for in 语句
+        // for(var 变量 in 对象){}
+        //把对象中所有语句给取出来
+        //有几个对象循环体执行几次
+        //每次执行时会将对象的一个属性的名字 赋值给变量
+        //   var obj={
+        //   name:"asd"
+        //   }
+        // for (var n in obj){
+        // console.log("hello");
+        // }
+
+        //作用域
+        //全局作用域 函数作用域 es新增块作用域
+        //全局作用域的变量都是全局变量，在页面的任意部分都可以访问的到。
+        //全局作用域中有一个全局对象window，由浏览器创建可以直接使用
+        //  console.log(window);
+        //在全局作用域中 创建的变量都会作为window对象的属性保存
+        //    function fun(){
+        //    console.log("sd");
+        //    }
+        //    fun(); //作为window对象的方法保存 
+        //    window.fun(); //实际上是一样的
+        //创建的函数都会作为window对象的方法保存
+        //   var a=10; 
+        //   console.log(window.a);
+
+
+        // console.log("a="+a);
+        // var a=213; //变量提升 声明提前 使用var关键字声明的变量会在代码执行之前被声明 如果不适用var 则不会提前
+        //函数的声明提前 使用函数声明形式创建的函数 function 函数名(){}  创建的函数 它会在所有的代码执行之前就被创建。
+        //var 关键字会声明提前 但不会初始化
+        //使用函数表达式创建的函数则不会 例如  var fun2=function(){};
+
+        //函数作用域
+        //调用函数创建函数作用域，函数执行完毕后，函数作用域销毁
+        //每调用一次函数就会创建一个新的函数作用域，他们之间是互相独立的 
+        //函数作用域中可以访问全局变量 但是反过来不行
+        // 当在函数作用域中操作一个变量时 会现在自身作用域中寻找，有直接使用 无则向上一级作用域中寻找，就近原则  闭包
+        //在函数中 要访问全局变量可以使用window对象
+        //在函数作用域中叶有声明提前的特性 
+        // 使用var关键字声明的变量会在所有函数中的代码执行之前被声明。
+        //在函数中 不用var声明的变量都会成为全局变量
+        // function fun(){
+
+        //  }
+        //  fun(); //独立的
+        //  fun(); //独立的
+        //  fun(); //独立的
+
+
+        // var a=10;//全局变量
+        // function fun(){
+        // console.log(a);
+        // }
+        // fun();
+
+        //闭包 会向上一级查找 直到找到全局作用域
+        // function fun(){
+        // var a=10;
+        // function fun2(){
+        // console.log(a);
+        // c=10; //全局变量 相当于window.c=10；
+        // }
+        // fun2();
+        // console.log(c); //访问全局变量
+        // }
+        // fun();
+
+        // 定义形参就相当于在函数作用域中声明了变量
+        // function fun6(e){
+        // alert(e);
+        // }
+        // fun6();
+
+        //this
+        //解析器在调用函数每次都会想函数内部传递一个隐含的参数
+        //这个隐含的参数就是this
+        //根据函数的调用方式的不同 this会指向不同的对象 谁调用就是谁
+
+        //this 以函数的形式调用时 this指向window
+        //以方法形式调用时this指向调用方法的对象
+        //
+        //   function fun(){
+        //   console.log(this);
+        //   }
+        //   fun();
+        //   var obj={
+        //   name:"Dasd",
+        //   sayname:fun
+        //   }
+        //   console.log(obj.sayname==fun);
+        //   obj.name(); this指向dasd
+        // fun();this指向fun
+
+
+        //相比于上边的obj更方便
+        //使用工厂方法创建对象 可以创建大量的对象
+        //封装构造函数
+        //  function createPerson(name){
+        //  var obj=new Object();
+        //向对象中添加属性
+        //  obj.name=name;   // 值不应该写死，应该从外边传进来
+        //  obj.sayname=function(){
+        //  alert(this.name)
+        //  }
+        //返回对象
+        //  return obj;
+        //  }
+        //  var obj2=createPerson("猪八戒");
+        //  obj2.sayname();
+        //  console.log(obj2);
+
+        //使用工厂方法创建的对象，使用的构造函数都是object
+        //所以创建的对象都是object
+        //就导致无法区分多种不同类型的对象
+        //构造函数 就是一个普通函数 创建方式和普通函数没有区别，习惯的构造函数习惯上首字母大写
+
+        //   var obj=new person(); //会报错
+        //   var obj2=new dog(); //区分对象
+        //构造函数  和普通函数区别在于调用方式不同，普通函数是直接调用，构造函数要使用new 关键字来调用
+        //构造函数的执行流程:
+        // 1.立刻创建一个新对象
+        // 2.将新建的对象设置为函数中的this，在构造函数中可以使用this来应用新建的对象
+        // 3.逐行执行函数中的代码
+        // 4.将新建的对象作为返回值返回
+        // function Person(可以在这里添加参数){
+        //    this.name="指示灯";
+        //   this.sd=name;
+        //   }
+        //   var per= new Person(可以在这里添加参数);
+        //   console.log(per.name);
+
+        //使用instanceof可以检查一个对象是不是一个类的实例
+        //  语法 对象 instanceof 构造函数
+        //  console.log(dog instanceof Person);
+        //所有的对象都是Obejct 的后代
+        //所有任何对象的object做instanceof检查时候都会返回true
+        //   console.log(dog instanceof Object)
+
+        // function person(name,age,gender){
+        //     this.name=name;
+        //     this.say=fun; //在这里指定一个就只创建一次   //添加原型后修改后这个地方也可以省略掉
+
+
+        //添加一个方法  //将方法在全局作用域中定义
+        //  将函数定义在全局作用域 污染了全局作用域的命名空间，也不安全
+
+        //     this.fun=function(){
+        //       alert("hello"+this.name); //在对象中添加一个方法  执行一万次就会创建一万个方法，完全没必要。可以指定在外部一个全局变量
+        //     }
+        // }
+
+        //添加原型的方法
+        //   Person.prototype.fun=function(){
+        //   alert("hello"+this.name);
+        //   }
+
+
+
+        //原型
+        //prototype  创建的每一个函数解析器会向函数中添加一个属性prototype  每一个函数的原型都是唯一的 这个属性对应着一个对象，这个对象就是原型对象。 如果函数作为普通函数调用prototype没有任何作用。当函数通过构造函数调用时，创建的对象中都会有一个隐含的属性指向该构造函数的原型对象 可以通过_proto_来访问该属性
+        //原型对象就相当于一个公共区域，所有同一个类的实例都可以访问到这个原型对象。
+        //当访问对象的一个属性或者方法时 会在对象自身中寻找，如果有直接使用，如果没有则去原型中找
+        //以后创建构造函数时 可以将这些对象共有的属性和方法 统一添加到构造函数的原型对象中
+        //  function Person(){
+        // 
+        //  };
+        //向原型对象中添加对象属性
+        //  Person.prototype.a=123;
+        //此时添加后mc中没有a属性。 在原型对象中 即Person中
+        //添加一个方法
+        //  Person.prototype.say=function(){
+        //  alert("hello");
+        //  }
+        // mc.say(); //原型方法
+        // var mc=new Person(); //原型对象
+        // var mc2=new Person()； //原型对象    公共空间
+        //  console.log(Person.prototype);
+        // console.log(mc._proto_);
+
+
+
+
+
+
+
+        //原型对象实例 
+        //创建一个构造函数
+        // function Myclass(){
+
+        // }
+        //向上述原型中 添加一个name属性
+
+        //  Myclass.prototype.name="我是原型中的名字";
+
+        //  var mc= new Myclass();
+        //  mc.age=18;
+        //使用in检查对象中是否含有某个属性时 如果对象中没有 原型中有原型中有也会返回true
+        //  console.log("name" in mc);
+
+        //可以使用对象的hasOwnproperty（）来检查对象自身中是否含有该属性  只有当对象自身中有该属性时才会返回true
+        //  console.log(mc.hasOwnProperty("age"));
+
+        //原型对象也是对象 所以他也有原型 
+        //   当我们使用一个对象的属性或者方法时，会在自身中寻找。如果自身中有，则直接使用，如果没有则去原型对象中找，如果还没有，去原型对象的原型中找 直到找到object对象的原型 object对象原型没有原型，如果没有返回null。
+        //   console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+
+
+
+
+
+        //创建一个Person实例
+        //    function Person(){};
+        //   var per=new Person("zhubajie",18,"name");
+        ////tostring()当我们在一个页面中打印一个对象汇总，实际上输出的是对象tostring()方法的返回值 
+        //如果我们希望在输出对象时不输出[object object](在chrome中直接打印person 不变) 可以为对象添加一个toString()方法
+        //    per.toString=function(){
+        //    return "我是一个快乐";
+        //    };
+        //    var result=per.toString() //直接改原型
+        //    console.log(per);
+
+
+
+
+        //垃圾回收机制 
+        //当一个对象没有任何变量或者属性对她进行引用，此时将永远无法操作对象 此时就成为了垃圾 多了会导致内存溢出
+        //js中有自动垃圾回收机制 将不需要的对象设置为null即可
+
+
+
+        //js中数组也是对象
+        //不同的普通对象是是用字符串作为属性名的
+        //数组是是使用数字来作为索引操作元素
+        //数组的存储性能比普通对象要好
+        //创建
+        //使用length获取数组的长度（个数）， 对于非连续的数组使用length会获取最大的索引长度+1
+        //如果修改length大于数组的长度 会空出来
+        // arr[0]=1;
+        // arr[100]=1;
+        // 索引是101 
+        //  var an= new Array();
+        // an[0]="123";
+        // console.log(an);
+        //如果找不到数组里的值会返回未定义
+        //向数组最后一个添加元素
+        //   arr[arr.length]=10;
+
+
+        //使用字面量创建数组  可以在创建时就可以指定数组中的元素   
+        //使用构造函数创建数组也可以同时添加元素，做参数传递就可 元素之间，隔开 
+        //    var arr=[];
+        //创建一个数组中只有一个元素
+        //  arr[]=[10];
+        //创建一个长度为10的数组
+        //   var arr=new array(10);
+        //可以是任意类型
+        //   arr=["dasdadas",111];
+        //对象
+        //   var obj={name:"asdad"};
+        //   arr[arr.length]=obj;
+        //   arr=[{qw:"dasdadas"},{ads:"asdsad"}];
+        //函数
+        //   arr=[function(){alert("sd")}];
+        //也可以放数组 二维数组
+        //  arr=[arr[0]=1];
+
+        //数组的方法
+        //   push() 可以向数组的末尾添加一个或者多个元素 并返回数组的新长度，可以将添加的元素作为方法参数传递
+        // arr.push("asd")；
+
+        //pop() 删除数组最后一个元素 并将被删除元素的值返回
+        //  arr.pop();
+
+        // unshift() 像数组开头添加一个或者多个元素 并返回新的数组长度 并调整索引
+
+        //shift 删除并返回数组的第一个元素
+
+
+        //数组遍历 用for（i=） 或者forEach()
+
+        // arr.forEach(function(){}); 数组里有多少元素就调用几次 需要一个函数作为参数
+        //创建一个新对象 把对象放入数组汇总
+        //   function Person(){};
+        //   var per=new Person("asd",19);
+        //   console.log(Person);
+        //  var arr=[per];
+        //  console.log(arr);
+
+        //封装到一个新数组并返回
+        // function Person(arr){
+        // var newarr=[];
+        //  return newarr;
+        //  console.log(newarr);
+
+        //slice() 可以用来从数组提取指定元素  参数:1。截取开始位置的索引 2.截取结束位置的索引  第二个参数可以不写 此时会从开始索引往后的所有元素
+        //索引可以传递一个负值  [0,1,2,3] 假设为-1为倒数第一个 则去到0-2 3没有 
+        // arr.slice(0,2); 
+
+
+        //splice()可以用于删除数组中的指定元素
+        //会影响到原数组会将指定元素从原数组中删除 并将删除的元素作为返回值返回。 参数：第一个表示开始的位置索引 第二个表示删除的数量。 第三个及以后可以传递一些新的元素这些元素将会自动插入到开始位置索引的前面
+        //arr.splice(0,2,"asd","asdads");
+
+
+
+        //数组如何去重？？
+        //   for(var i=0;i<arr.length;i++){
+        //   console.log(arr[i]);
+        //获取当前元素后的所有元素
+        //   for(var j =i+1;j<arr.length; j++){
+        // if(arr[i]==arr[j]){
+        //如果两个元素的值相等 删除j对应的元素
+        // arr.splice(j,1);
+        //在此添加 J--；
+
+        // }
+        //   }
+        //   }
+        //此时删除后 位置会往前  假设后面还有同一个 由于循环开始下一次 下一个的元素会到上一个元素的位置 但是上一个元素的位置已经比过了 不会再比 下一个不会与本次的不同 所以会删少一个
+        //所以当删除了J所在元素以后 应该再比较一次j所在位置的元素 使J自检
+
+
+        //数组排序 sort()  
+        // 可以在sort中添加一个回调函数 来制定排序规则
+        //  需要定义两个形参  浏览器会分别使用数组的元素作为实参去调用函数
+        // 根据回调函数的返回值来觉得元素的顺序 如果返回一个大于0的值 则交换位置 如果小于0的值 则元素位置不变 如果返回一个0 则认为两个元素相等 也不交换位置
+        // arr[5,4];
+        // arr.sort(function(a,b){
+        //     console.log("a="+a);
+        //     if(a>b)return 1;
+        // })
+
+        //即使对纯数字的数组 使用该方法排序时 也会按照unicode编码来排序 所以对数字排序时 可能会得到错误的结果  
+
+
+
+
+        //call（） 和 apply 两个都是函数对象的方法 需要通过函数对象来调用
+        //都“可以用来代替另一个对象调用一个方法，将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。”
+        // 　　fun.call(thisobj,arg1,arg2) ;当后面参数个数确定时用call,参数之间用逗号连接
+
+        // 　　fun.apply(thisobj,[arg1,arg2])；当后面参数个数不确定时用apply，参数通过数组形式输入
+        //会改变this的指向
+
+        // 不同在于
+        // call的实参是一个一个传递的
+        //apply方法需要将实参封装到一个数组中统一传递
+
+        //this的情况
+        //1。以函数的形式调用时 this指向window
+        //2。方法的形式调用时 指向调用方法的对象
+        //3。构造函数的调用时 指向新创建的对象
+        //4.使用call和apply时 this指定的那个参数
+        // var obj={
+        //   name:"asdad",
+        //   say:function(){
+        //       alert(this.name);
+        //   }
+
+        // };
+        // var obj2={
+        //     name:"asdads"
+
+        // };
+
+        //改变this指向
+        // fun.apply();
+        // fun.call();
+        // fun();
+        // function fun(){
+        // alert(this.name);}
+        // obj.say.apply(obj2);    //改为obj2
+        // fun.call(obj)
+
+
+
+
+
+
+
+        //调用函数时 每次会传递两个隐含的参数 
+        //  1.函数上下文对象this
+        //  2.封装的实参对象 arguments  是一个类数组对象  在调用函数时 所有实参都会在arguments中保存
+        // 可以用length获取实参长度 arguments
+        //  就算不定义形参也可以通过arguments使用实参 
+        // arguments[0] 表示第一个实参
+        //里面有一个callee 对应一个函数对象就是当前正在指向的函数对象
+        //    function fun(){
+        //    alert("asd");
+        //    console.log(arguments instanceof Array);
+        //    }
+
+
+        //date对象表示一个时间
+        //  var d= new Date();
+        //  alert(d);
+        //  var day=d.getFullYear();
+        //  alert(day);
+        //   var time=d.getHours();
+        //   var ds=d.getMinutes();
+        //特别注意 month要+1
+        //   var ds=d.getMonth()
+        //   month+1
+
+        //math 对象  有 math.random  math.abs 等
+
+
+
+        //在js中提供了三个包装类
+
+        //   string(),将基本数据类型字符串转换为string对象
+        //   Number(), 将基本数据类型的数字转换为number对象
+        //   Boolean 将基本数据类型的布尔值转换为boolean对象
+
+
+        //创建一个number对象
+
+        // var num=new Number(3)；
+        // 向 num中添加一个属性
+        // num.hello="asdasd";
+        //方法和属性只能添加给对象不能添加给基本数据类型 当用基本数据类型的去调用属性和方法时 浏览器会临时使用包装类将其转化为对象 然后再调用的对象属性和方法
+        //调用完毕后将其转换为基本数据类型
+        //  var s=123;
+        //  s.hello="你好"；
+        // 基本数据类型会临时转换  将hello属性添加到 对象s中 后被销毁
+        //  s=s.toString();
+
+
+
+        //字符串方法 
+        //  charAt() //可以返回字符串中指定位置的字符 根据索引获取指定字符
+        //  str="he";
+        //  var str1=str.charAt(0); //不会对原字符串产生影响 只会返回值
+        //  console.log(str1)
+
+        // charCodeAt() 类似以上 但是返回的是unicode的编码数字
+
+        //concat() 可以连接两个或者多个字符串 或者使用+号也一样
+
+        // resuult=str.concat("nihao","asd"); //不会对原字符串产生影响
+
+
+
+        // indexOf 检索字符串中是否含有指定内容 如果有则返回第一次出现的索引 
+        //没有返回-1  可以指定一个第二个参数 制定开始查找的位置 从前往后找
+        // str.indexOf("1 //值 假设要搜索t 则输入t")；
+
+        //lastindexof() 该方法和indexof 用法一样 不同在于从后边开始检索
+
+
+        //substring  用来截取一个字符串 与slice类似   参数 第一个：开始截取位置的索引 包括开始位置  第二个 结束位置的索引 不包括结束为止
+        // 不同在于不可以传-值 如果传递了-值默认取0 并且他还自动调整位置 如果第二个参数小于第一个则自动交换
+
+        //substr //用来截取字符串  参数:截取开始的位置索引， 截取的长度
+        //   str.substr(3,2);
+
+
+        //split 将一个字符串拆分为一个数组 如果是空字符串作为参数 会将每个字符都拆分成一个数组的元素
+        //  str.spilt("");
+        //参数：需要一个字符串作为参数 将会根据改字符串去拆分数组
+        //   str="asd,asdsad,asdasd";
+        //   str.split(","); 根据逗号拆分为数组
+        // console.log("result.length";)
+
+        //toUppercase 将一个字符串转换为大写并返回
+        //    str.touppercase()
+        //    str="adad";
+        // tolowercase 转换为小写并且返回
+
+
+
+
+        //正则表达式  使用typeof检查正则对象 会返回object
+        //创建正则表达式
+        //    语法
+        // var 变量= new RegExp("正则表达式","匹配模式")
+        // var reg=new RegExp("a");
+
+        //在构造函数中可以传递一个匹配模式作为第二个参数 可以是 i忽略大小写 g 全局匹配模式
+        // var reg=new RegExp("a");
+        // var reg=new RegExp("ab","i");
+        //   console.log(reg.test("sdadac"));
+
+        //正则表达式的方法
+        //   test() 使用该方法可以用来检查一个字符串是否符合正则表达式的规则 如果符合返回true否则false
+        // var str="a";
+        //   var result=reg.test(str);
+        //   console.log(reg.test("a"));true
+
+        //这个正则表达式检查是否有a 上边也是如此只要有a 大小写敏感 就是true
+        //   console.log(reg.test("sdadac"));
+
+
+
+
+
+        //使用字面量来创建正则表达式
+        //  语法:var 变量=/正则表达式/匹配模式
+        //使用字面量的方式创建更加简单 使用构造函数创建更加灵活
+        //  reg=/a/i;
+        //创建一个正则表达式检查一个字符串中是否有a或者b
+        //   reg=/a||b/;  
+        // []也可以表达或的关系与||相同 [ab] 
+        //[a-b] 任意小写字母 
+        // [A-Z]任意大写字母
+        // [A-z] 任意字母
+        // [^]除了数字 [^0-9]除了0-9
+        //   console.log(reg.test("avsd"));
+
+
+
+
+        //和正则相关的方法  split match 等
+        // search 检索是否含有指定内容  返回出现的索引
+        //检索是否含有abc 或者aec
+        //   str="hello avc heelo abc";
+        //   result=str.search(/a[bef]c/);  //很多方法用正则都可以用这样
+        //   console.log(result);
+
+        //  console.log(reg.test("adasdsaaaa"));
+
+
+        //相关语法  量词可以设置一个内容出现次数
+        //  var reg=/a{3}/; {n} N次 {m,n}出现m-n次  {m,}m次以上  
+        // + 至少一个 相等于{1,}  * 0个或者多个相当于 {0,}
+        // ?表示0个或者一个 {0,1}
+
+        // ^表示开头 /^a/ 检索是否从a开头
+        // $表示结尾   /A$/表示a结尾
+        //如果同时使用 ^或者$ 要求字符串必须完全符合正则表达式
+        // reg=/^a|a$/
+
+        //检索是否是合法手机号
+        //   1. 1开头
+        //   2. 第二位 3-9任意数字
+        //   3. 第三位以后任意 长度有限制
+
+        //    ^1 [3-9] [0-9]{9}$
+
+
+
+
+        //检查一个字符串中有没有. 
+        //  .表示任意字符
+        //在正则表达式中用\作为转义字符
+        // \.表示.
+        // \\表示\
+        // 注意使用构造函数时 由于它的参数是一个字符串 而\是字符串中转义字符 如果要使用\要使用\\来代替
+        // var reg=/\./;// 字面量只要一个
+        // reg=/\\/; 
+        // reg=new  RegExp("\\.");
+        // reg =new RegExp("\\.") ; //构造函数
+        // console.log(reg.test("!@#!@#!")); //false
+        // console.log(reg);
+        //还有很多查表
+
+        //邮件的正则表达式
+
+        //   hello                 .nihao              @           abc. com.cn
+        //   任意字母的数字下划线 .任意字母数字下划线 @ 任意字母数字   .任意字母(2-5) .任意字母(2.5)
+        //  \w{3,} (\.\w+)* @[A-z0-9]+（\.[A-z]{2,5}）{1,2}
+
+
+
+
+
+
+
+        //DOM 节点
+        //文档节点 html 
+        //元素节点 html文档中html标签
+        //属性节点 元素的属性
+        //  文本节点 html标签中的文本内容
+    </script>
+
+</body>
+
+</html>
+  
+  
+  
+  
+  <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +1658,23 @@
          <button type="button" id="prior">上一张</button>
          <button type="button" id="next">下一张</button>
          
+  <p id="xieyi" style="margin:0 auto; width: 400px; height:200px;overflow:scroll; background-color: #bfa;">点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
+  </p>
+   <input type="checkbox" disabled="disabled" >
+    <button type="button" disabled="disabled" id="btn">提交</button>
+
+
         <!-- <img src="img/1.jpg" alt="">
         <button type="button" id="prior">上一张</button>
         <button type="button" id="next">下一张</button>
@@ -39,7 +1702,7 @@
        
 </body>
 <script>
-
+//图片切换
  var prior=document.getElementById("prior");
  var next=document.getElementById("next");
  var index=0;
@@ -60,7 +1723,21 @@
         }
      }
   }
+// 用户协议确认
 
+  var xieyi=document.getElementById("xieyi");
+  // console.log("xieyi");
+  var  inputs=document.getElementsByTagName("input")[0];
+  var btn=document.getElementById("btn");
+  window.onload=function(){
+    xieyi.onscroll=function(){
+      if(xieyi.scrollHeight-xieyi.scrollTop==xieyi.clientHeight)
+    {
+       inputs.disabled=false;
+        btn.disabled=false;
+    }
+    }
+  }
 
 
 //样式选择器
