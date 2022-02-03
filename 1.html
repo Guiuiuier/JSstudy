@@ -15,17 +15,16 @@
             margin: 0 auto;
         }
     </style> -->
-    <div>
-        <!-- 图片练习 -->
-        <!-- <p id="imgshu">当前共几张，现在是第几章</p>
+    <!-- 图片练习 -->
+    <!--    <div> <p id="imgshu">当前共几张，现在是第几章</p>
    <img src="1.jpg" alt="">
  <button value="上一张" id="prior">上一张</button>
  <button value="下一张" id="next">下一张</button> -->
 
 
 
-        <!-- 全选练习-->
-        <!-- <input type="checkbox" value="全选/全不选" id="quanxuanquanbuxuan" onclick="quanxaunquanbuxuan">全选/全不选
+    <!-- 全选练习-->
+    <!-- <input type="checkbox" value="全选/全不选" id="quanxuanquanbuxuan" onclick="quanxaunquanbuxuan">全选/全不选
         <br />
         <input type="checkbox" name="d" value="足球 ">足球
         <input type="checkbox" name="d" value="篮球">篮球
@@ -37,21 +36,21 @@
         <input type="button" id="tijiao" value="提交">提交 -->
 
 
-        
 
 
 
 
 
-        <!-- 增删改查练习 -->
-        <!-- <table>
+
+    <!-- 增删改查练习 -->
+    <!-- <table>
          <tr>
              <td><div></div></td>
          </tr>
         </table>
 
          table里面要有 tr 和td 否则不显示 -->
-        <!-- <table id="tableid">
+    <!-- <table id="tableid">
         
                 <div class="fu">
                 <div name="mingzi">名字</div>
@@ -76,8 +75,8 @@
 
     </div> -->
 
-        <!-- 使用DOM操作css -->
-        <!-- <style>
+    <!-- 使用DOM操作css -->
+    <!-- <style>
             #box1{
                 width: 100px;
                 background-color: navy;
@@ -87,8 +86,8 @@
         <button id="bt1">点我一下</button>
         <div id="box1"></div> -->
 
-  <!-- 滚动条练习 -->
-  <!-- <style>
+    <!-- 滚动条练习 -->
+    <!-- <style>
       #info{
           width: 300px;
           height: 500px;
@@ -173,8 +172,8 @@
      <div id="showMsg"></div> -->
 
 
-     <!-- div跟随鼠标移动 -->
-     <!-- <style>
+    <!-- div跟随鼠标移动 -->
+    <!-- <style>
          *{
              height: 1000px;
          }
@@ -187,106 +186,353 @@
          }
      </style>
      <div id="box1"></div> -->
-        
 
-      <!-- 事件冒泡 -->
-<style>
+
+    <!-- 事件冒泡 -->
+    <!-- <style>
       #box1{
           width:200px;
           height: 200px;
           background-color: #bfa;
       }
+      #bx{
+          background-color: yellow;
+      }
 </style>
-<div id="box1"></div>
+<div id="box1">我是box1
+    <span id="bx">我是span</span>
+</div> -->
+
+
+    <!-- //事件的委派 -->
+
+    <!-- <ul id="ue">
+      <li><a href="javascripr:;" class="link">超链接1</a></li>
+      <li><a href="javascripr:;" class="link">超链接2</a></li>
+      <li><a href="javascripr:;" class="link">超链接3</a></li>
+      <li><a href="javascripr:;" class="link">超链接4</a></li>
+     <p>我是p元素</p>
+  </ul>
+  <button id="btn">添加一个超链接</button> -->
+
+
+
+
+    <!-- 事件绑定 -->
+    <!-- <button type="button" id="btn">点我一下</button> -->
+
+    <!-- 事件的传播 -->
+    <style>
+        #box1 {
+            width: 300px;
+            height: 300px;
+            background-color: #bfa;
+        }
+
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
     <script>
-// //跟随鼠标移动
-// window.onload=function(){
-//     //让鼠标跟随移动
-//     var box1=document.getElementById("box1");
-//     //绑定鼠标移动事件
-//     //此时 box1改为document后就可以移动了
-//     document.onmousemove=function(event){
-//         // 解决兼容问题
-//         event=event||window.event;
-//         //获取鼠标坐标
-//         var left=event.clientX;
-//         var top=event.clientY;
-//         //设置div偏移量 只对开启定位的起作用
-//         box1.style.left=left+"px";
-//         box1.style.top=top+"px";
-//         //此时无法向左移动因为超过box1的位置了 不能左移动 不触发
-//     }
-// }
+        //事件的传播
+        // w3c标准将事件分成三个阶段
+        //1，捕获阶段 在捕获阶段时从最外层的祖先元素 向目标元素进行事件的捕获，但是默认此时不会触发事件
+        // 2， 目标阶段 在目标阶段 事件捕获到目标元素 从外到里 捕获结束开始在目标元素上执行事件
+        // 3， 冒泡阶段 事件从目标元素向他的祖先元素传递  依次触发祖先元素上的事件 从里向外
+        //如果希望在捕获阶段就触发事件，将 addeventlistener的第三个参数设置为true  从外到里 所以一般是fasle
+        //在ie8及以下的浏览器中没有捕获阶段
 
+        window.onload = function () {
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            var box3 = document.getElementById("box3");
+        }
+        bind(box1, "click", function () {
+            alert("box1");
+        })
+        bind(box2, "click", function () {
+            alert("box2");
+        })
+        bind(box3, "click", function () {
+            alert("box3");
+        })
 
-
-
-//获取当前鼠标位置
-
-// window.onload=function(){
-//      var areaDiv=document.getElementById("areaDiv");
-//      var showMsg=document.getElementById("showMsg");
-//      //onmousemove鼠标在元素中移动时触发
-//     //事件对象 当响应函数被触发时 浏览器每次都会将一个事件对象作为实参传递进响应函数
-//     //event叫啥都行
-//     //在事件对象中封装了当前事件相关的一切信息:例如 鼠标位置等
-//      areaDiv.onmousemove=function(event){
-//          // ie不兼容 可以这样改进
-//          //  在IE8中 响应函数被触发时 浏览器不会传递事件对象
-//          //是将对象作为window对象的属性保存的
-//         //  if (!event) {
-//             //  event = window.event;
-//         //  }
-//         //  event=event||window.event;
-//         // 在showMsg中显示鼠标的坐标
-//         //clientX可以获取鼠标指针的水平坐标
-//         //clientY可以获取鼠标的垂直坐标
-//         var x=event.clientX;
-//         var y=event.clientY;
-//                 //alert("x="+x+",y="+y);
-//         showMsg.innerHTML="x="+x+",y="+y;
-//      }      
-
-// }
+        function bind(obj, eventStr, callback) {
+            if (obj.addEventListener) {
+                //大部分浏览器兼容的方式
+                obj.addEventListener(eventStr, callback, false);
+            } else { //IE8及以下
+                //this是谁由调用方式决定 由浏览器决定 
+                //  callback.call(obj); 就可以控制
+                obj.attachEvent("on" + eventStr, function () {
+                    //在匿名函数中调用回调函数 callback();
+                    callback.call(obj);
+                });
+            }
+        }
 
 
 
 
 
-// 滚动条练习
-//   window.onload=function(){
-//       //获取两个表单项
-//     var inputs=document.getElementsByTagName("input");
-//            //当元素滚动条滚动到底时可用，改时间会在元素的滚动条滚动时出发
-//            //onscroll
-//                     //    var box1=document.getElementById("box1");
-//            var info=document.getElementById("info");
-//            info.onscroll=function(){
-//             //检查垂直滚动条是否垂直到底
-//              if(info.scrollHeight-info.scrollTop==info.clientHeight){
-//                 //到底后使表单可用
-//                 //true禁用 false不禁用
-//                 inputs[0].disabled=false;
-//                 inputs[1].disabled=false;
-//                          // box1.style.width="200px";
-//              }
-//            }
-       
-//   }
+
+        //事件的绑定
+        // window.onload=function(){
+        //     var btn=document.getElementById("btn");
+        //     // btn.onclick=function(){
+        //     //     alert(1);
+        //     // }
+        //     // btn.onclick=function(){
+        //     //     alert(2);
+        //     // }
+        //     //使用 对象.函数=函数 只能同时为一个元素绑定一个响应函数 不能绑定多个如果绑定多个则后边会覆盖掉前边的
+        //    //addeventListener()
+        //     // 通过这个方法也可以为元素绑定响应函数
+        //     //参数 1.事件的字符串 不要on
+        //         //    2.回调函数 当事件触发时改函数会被调用
+        //         // 3.是否在捕获阶段触发事件 一般都为false 如果没有特殊情况
+        //         //这种方式可以同时为一个元素的相同事件同时绑定多个响应函数，按照事件的绑定顺序执行
+        //         // ie8以下不支持addevent...   可以使用attachevent()来绑定事件
+        //                                         // 1.事件的字符串，要on
+        //                                         // 2.回调函数
+        //                                         //这个方法也可以同时为一个事件绑定多个函数 不同的是在于后绑定先执行。 于addeventlistner执行顺序相反； 3 2 1 
+        //                                         //如果要兼容所有浏览器 需要判断
+        //                         //定义一个函数 
+        //                         // addeventlistner中的this是绑定事件中的对象 而 attachevent的this是window 需要统一两个方法的this
+        //                          // 参数 obj 要绑定的对象
+        //                         //  eventstr事件的字符串
+        //                         //  callback 回调函数 
+        //                         bind(btn,"click",function(){
+        //      alert("1");
+        //  })
+
+        //         function bind(obj,eventStr,callback){
+        //             if(obj.addEventListener){
+        //                  //大部分浏览器兼容的方式
+        //             obj.addEventListener(eventStr,callback,false);
+        //             }else{ //IE8及以下
+        //              //this是谁由调用方式决定 由浏览器决定 
+        //             //  callback.call(obj); 就可以控制
+        //             obj.attachEvent("on"+eventStr,function(){
+        //                 //在匿名函数中调用回调函数 callback();
+        //                 callback.call(obj);
+        //             });
+        //             }
 
 
-//使用DOM操作css
-//  window.onload=function(){
-//      //点击按钮后修改box1大小
-//      var box1=document.getElementById("box1");
-//      var bt1=document.getElementById("bt1");
-//      bt1.onclick=function(){
-         //修改box1的宽度
+        //         }
+
+
+
+        //    /* btn.addEventListener("click",function(){
+        //         alert(1);
+        //     },false);
+        //     btn.addEventListener("click",function(){
+        //         alert(2);
+        //     },false);
+        //     btn.attachEvent();
+        //     */
+        // }
+
+
+
+
+
+        //事件的绑定
+
+
+
+
+
+
+
+        //事件的委派  指将事件统一绑定给共同的祖先元素， 这样后代元素上的事件触发时 会一直冒泡到祖先元素 从而通过祖先元素的响应函数来处理事件
+        //利用了冒泡 通过委派可以减少事件的绑定次数 提高程序的性能
+
+        //  window.onload=function(){
+        //     //点击按钮以后添加超链接
+        //     var ue=document.getElementById("ue");
+        //     var btn=document.getElementById("btn");
+        //     btn.onclick=function(){
+        //         //新建一个li
+        //         var li=document.createElement("li");
+        //         li.innerHTML="<a href='javascript:;' class='link'>我牛逼</a>";
+        //         //将li添加到ul中
+        //        ue.appendChild(li);
+        //     }
+        //获取所有a
+        //  var alll=document.getElementsByTagName("a");
+        //  for(var i=0;i<alll.length;i++){
+        //为每一个超链接绑定一个function
+        //这里我们为每一个超链接都绑定了一个单击响应函数，这种操作比较麻烦，而且这些操作只能为已有的超链接设置事件新增的超链接必须重新绑定
+        //不推荐这种方法
+        //  alll[i].onclick=function(){
+        //  alert("我是a的单击相应函数！");
+        //  }
+        //  }
+
+        //我们希望只绑定一次事件 即可应用到多个元素上即使元素是后添加的
+        //我们可以将其绑定的元素可以给共同的祖先元素
+        // 为UL绑定一个单击响应函数
+        //这样所有子元素都可以响应不论是不是新添加的 
+        //缺点 整个子区域都会触发 例如 li 会触发 只想给a绑定就不方便
+        //      ue.onclick=function(){
+        //           alert("我是ul的单击响应函数");
+        //      }
+        //  }
+        //改进
+        //   ue.onclick=function(event){
+        //为其添加一个class元素
+        // alert(this); //谁触发这个this就是谁
+        // event=event||window.event;
+        // alert(event.target); //target为点击的目标 表示触发事件的对象
+        //  }
+        //  }
+
+
+
+
+
+        /*事件的冒泡
+        事件冒泡：
+        指的就是向上传到 当后代元素上的事件被触发时，其祖先元素的相同事件也会被触发
+        在开发中大部分冒泡是有用的 极个别除外 例如本例子中的就是无意义的。 如果不希望发生事件的冒泡可以通过事件对象来取消冒泡*/
+        /*
+  
+  window.onload=function(){
+       var bx=document.getElementById("box1");
+       var bxx=document.getElementById("bx");
+       bxx.onclick=function(){
+           alert("span");
+           //取消冒泡 可以将事件对象设置为true即可取消 event/window.event 无兼容性问题不会向上冒泡了
+           event.cancelBubble=true; 
+       }
+       box1.onclick=function(){
+           alert("div");
+       }
+       //为body绑定
+       document.body.onclick=function(){
+           alert("body");
+       }
+ } 
+ */
+
+
+
+
+
+
+
+
+
+
+
+        //跟随鼠标移动
+        /*
+window.onload=function(){
+    //让鼠标跟随移动
+    var box1=document.getElementById("box1");
+    //绑定鼠标移动事件
+    //此时 box1改为document后就可以移动了
+    document.onmousemove=function(event){
+        // 解决兼容问题
+        event=event||window.event;
+        //获取鼠标坐标
+        var left=event.clientX;
+        var top=event.clientY;
+        //设置div偏移量 只对开启定位的起作用
+        box1.style.left=left+"px";
+        box1.style.top=top+"px";
+        //此时无法向左移动因为超过box1的位置了 不能左移动 不触发
+    }
+}
+
+*/
+
+
+        //获取当前鼠标位置
+        /*
+        window.onload=function(){
+             var areaDiv=document.getElementById("areaDiv");
+             var showMsg=document.getElementById("showMsg");
+            //  onmousemove鼠标在元素中移动时触发
+            // 事件对象 当响应函数被触发时 浏览器每次都会将一个事件对象作为实参传递进响应函数
+            // event叫啥都行
+            // 在事件对象中封装了当前事件相关的一切信息:例如 鼠标位置等
+            // 
+             areaDiv.onmousemove=function(event){
+               //ie不兼容 可以这样改进
+                  在IE8中 响应函数被触发时 浏览器不会传递事件对象
+                 是将对象作为window对象的属性保存的
+                 //
+                 if (!event) {
+                     event = window.event;
+                 }
+                 event=event||window.event;
+                // 在showMsg中显示鼠标的坐标
+                clientX可以获取鼠标指针的水平坐标
+                clientY可以获取鼠标的垂直坐标
+                
+                var x=event.clientX;
+                var y=event.clientY;
+                        //alert("x="+x+",y="+y);
+                showMsg.innerHTML="x="+x+",y="+y;
+             }      
+
+        }
+        */
+
+
+
+
+
+        // 滚动条练习
+        //   window.onload=function(){
+        //       //获取两个表单项
+        //     var inputs=document.getElementsByTagName("input");
+        //            //当元素滚动条滚动到底时可用，改时间会在元素的滚动条滚动时出发
+        //            //onscroll
+        //                     //    var box1=document.getElementById("box1");
+        //            var info=document.getElementById("info");
+        //            info.onscroll=function(){
+        //             //检查垂直滚动条是否垂直到底
+        //              if(info.scrollHeight-info.scrollTop==info.clientHeight){
+        //                 //到底后使表单可用
+        //                 //true禁用 false不禁用
+        //                 inputs[0].disabled=false;
+        //                 inputs[1].disabled=false;
+        //                          // box1.style.width="200px";
+        //              }
+        //            }
+
+        //   }
+
+
+        //使用DOM操作css
+        //  window.onload=function(){
+        //      //点击按钮后修改box1大小
+        //      var box1=document.getElementById("box1");
+        //      var bt1=document.getElementById("bt1");
+        //      bt1.onclick=function(){
+        //修改box1的宽度
         //   通过修改js修改元素的样式
         //   语法: 元素.style.样式名=样式值
         //读取box1样式
-            // 语法:元素.style.样式名\
-            //通过style属性设置和读取的都是内联样式 无法读取样式表中的样式 外部的不行         // box1.style.backgroundColor="yellow"; 内容中的才可以" <div style="color:red">
+        // 语法:元素.style.样式名\
+        //通过style属性设置和读取的都是内联样式 无法读取样式表中的样式 外部的不行         // box1.style.backgroundColor="yellow"; 内容中的才可以" <div style="color:red">
         //样式是有优先级的  如果在样式汇总写了 !important 则此时样式会有最高 通过js也不能覆盖该样式
         // box1.style.width="300px";  //需要是一个字符串""
         // box1.style.backgroundColor="yellow"; //含有- 是不合法的要是用驼峰法才能改进background-color
@@ -296,29 +542,29 @@
 
         //获取样式
         // window.onload=function(){
-            //  获取元素当前显示样式
-            // 语法:元素.currentStyle.样式名
-            // CurrentStyle只有ie浏览器支持  其他浏览器不支持
-            // 在其他浏览器中可以使用，getComputedStyle() 这个方法获取当前样式
-            // 两个参数 第一个参数:要获取样式的元素 第二个:可以传递一个伪元素，一般传递null
-            // alert(getComputedStyle(box1,null).width);
-            //该方法会返回一个对象，对象中封装了当前元素的对应样式，如果没有设置样式，会获取到真是的值而不是默认值
-            // 如果没设置width 他不会获取到auto而是一个长度
+        //  获取元素当前显示样式
+        // 语法:元素.currentStyle.样式名
+        // CurrentStyle只有ie浏览器支持  其他浏览器不支持
+        // 在其他浏览器中可以使用，getComputedStyle() 这个方法获取当前样式
+        // 两个参数 第一个参数:要获取样式的元素 第二个:可以传递一个伪元素，一般传递null
+        // alert(getComputedStyle(box1,null).width);
+        //该方法会返回一个对象，对象中封装了当前元素的对应样式，如果没有设置样式，会获取到真是的值而不是默认值
+        // 如果没设置width 他不会获取到auto而是一个长度
 
-            // 通过currentStyle和getcomputedstyle()读取到的样式都是只读的
-            //如果要修改必须通过style属性
+        // 通过currentStyle和getcomputedstyle()读取到的样式都是只读的
+        //如果要修改必须通过style属性
 
-            // 处理ie和其他浏览器兼容问题
-            //  function getstyle(obj,name){
-            //      if(window.getComputedStyle){
-            //          return getComputedStyle(obj,null)[name];
-            //      }else {
-            //          return obj.currentstyle[name];
-            //      }
-            //  }
+        // 处理ie和其他浏览器兼容问题
+        //  function getstyle(obj,name){
+        //      if(window.getComputedStyle){
+        //          return getComputedStyle(obj,null)[name];
+        //      }else {
+        //          return obj.currentstyle[name];
+        //      }
+        //  }
         // }
-//     }
-//  }
+        //     }
+        //  }
 
 
 
@@ -329,130 +575,128 @@
 
 
 
-//增删改查练习
-//删除的响应函数 可以在改进调用
-// function delA(){
-//         // alert("d");
-//         //点击超链接后需要删除超链接所在的那行
-//         //获取当前div 
-//         var div= this.parentNode;
-//         //conform 用于弹出一个带有确认和取消按钮的框
-//         var flag=confirm("确定?");
-//         if(flag){
-//                //删除当前div
-//         div.parentNode.removeChild(div); 
-//         }
-//     }
+        //增删改查练习
+        //删除的响应函数 可以在改进调用
+        // function delA(){
+        //         // alert("d");
+        //         //点击超链接后需要删除超链接所在的那行
+        //         //获取当前div 
+        //         var div= this.parentNode;
+        //         //conform 用于弹出一个带有确认和取消按钮的框
+        //         var flag=confirm("确定?");
+        //         if(flag){
+        //                //删除当前div
+        //         div.parentNode.removeChild(div); 
+        //         }
+        //     }
 
 
 
-// 内容开始
-//获取所有超链接
-// var allA=document.getElementsByTagName("a");
-// //为每个超链接绑定一个单击函数  响应函数可以通过过return false来取消默认行为
-// for(var i=0;i<allA.length;i++){
-//     allA[i].onclick=function(){
-//         // alert("d");
-//         //点击超链接后需要删除超链接所在的那行
-//         //获取当前div 
-//         var div= this.parentNode;
-//         //conform 用于弹出一个带有确认和取消按钮的框
-//         var flag=confirm("确定?");
-//         if(flag){
-//                //删除当前div
-//         div.parentNode.removeChild(div); 
-//         }
+        // 内容开始
+        //获取所有超链接
+        // var allA=document.getElementsByTagName("a");
+        // //为每个超链接绑定一个单击函数  响应函数可以通过过return false来取消默认行为
+        // for(var i=0;i<allA.length;i++){
+        //     allA[i].onclick=function(){
+        //         // alert("d");
+        //         //点击超链接后需要删除超链接所在的那行
+        //         //获取当前div 
+        //         var div= this.parentNode;
+        //         //conform 用于弹出一个带有确认和取消按钮的框
+        //         var flag=confirm("确定?");
+        //         if(flag){
+        //                //删除当前div
+        //         div.parentNode.removeChild(div); 
+        //         }
 
-//     }
-// //添加信息功能
-//     var add=document.getElementById("tijiaoneirong");
-//     add.onclick=function(){
-//      //获取添加信息1
-//       var name=document.getElementById("tianjia");
-//      //获取添加信息2
-//      var name1=document.getElementById("tjwenzi");
-//      //获取按钮
-//      var name2=document.getElementById("tijiaoneiirong")
-    //  <div id="neirng">
-    //             <div name="mingzi">名字</div>
-    //             <div name="wenzi">内容</div>
-    //             <a href="####">删除</a>
-    //         </div>
-            //获取到的信息保存的上边
+        //     }
+        // //添加信息功能
+        //     var add=document.getElementById("tijiaoneirong");
+        //     add.onclick=function(){
+        //      //获取添加信息1
+        //       var name=document.getElementById("tianjia");
+        //      //获取添加信息2
+        //      var name1=document.getElementById("tjwenzi");
+        //      //获取按钮
+        //      var name2=document.getElementById("tijiaoneiirong")
+        //  <div id="neirng">
+        //             <div name="mingzi">名字</div>
+        //             <div name="wenzi">内容</div>
+        //             <a href="####">删除</a>
+        //         </div>
+        //获取到的信息保存的上边
 
 
-                    //创建div
-                    // var fu=document.createElement("div");
-                                //以下方法太难 代码也不好看 把创建结点的方法改进
+        //创建div
+        // var fu=document.createElement("div");
+        //以下方法太难 代码也不好看 把创建结点的方法改进
 
-                    // //创建两个div
-                    // var mingzitd=document.createElement("div")
-                    // var wenzitd=document.createElement("div")
-                    // //创建一个a标签
-                    // var atd=document.createElement("a");
-                    // //创建文本节点
-                    // var mingzi=document.createTextNode(name.value);
-                    // var wenzi=document.createTextNode(name1.value);
-                    // var deleted=document.createTextNode("删除");
+        // //创建两个div
+        // var mingzitd=document.createElement("div")
+        // var wenzitd=document.createElement("div")
+        // //创建一个a标签
+        // var atd=document.createElement("a");
+        // //创建文本节点
+        // var mingzi=document.createTextNode(name.value);
+        // var wenzi=document.createTextNode(name1.value);
+        // var deleted=document.createTextNode("删除");
 
-                    // //将文本全部拼到一起 mingzi内容添加到各自div中
-                    //   mingzitd.appendChild(mingzi);
-                    //   wenzitd.appendChild(wenzi);
-                    //   atd.appendChild(deleted);
+        // //将文本全部拼到一起 mingzi内容添加到各自div中
+        //   mingzitd.appendChild(mingzi);
+        //   wenzitd.appendChild(wenzi);
+        //   atd.appendChild(deleted);
 
-                    // //向a中添加href属性
-                    // atd.href="###";
+        // //向a中添加href属性
+        // atd.href="###";
 
-                    // //将文本添加到fu中
-                    // fu.appendChild(mingzitd);
-                    // fu.appendChild(wenzitd);
-                    // //将a标签添加文本
-                    // atd.appendChild(deleted);
-                    // fu.appendChild(atd);
-// //添加一个新的绑定函数 对应下边tips  此时直接复制粘贴上边的函数 太麻烦需要在外边调用
-// atd.onclick=function(){
-//         // alert("d");
-//         //点击超链接后需要删除超链接所在的那行
-//         //获取当前div 
-//         var div= this.parentNode;
-//         //conform 用于弹出一个带有确认和取消按钮的框
-//         var flag=confirm("确定?");
-//         if(flag){
-//                //删除当前div
-//         div.parentNode.removeChild(div); 
-//         }
-//     }
-                    //以上方法太难 代码也不好看 把创建结点的方法改进
+        // //将文本添加到fu中
+        // fu.appendChild(mingzitd);
+        // fu.appendChild(wenzitd);
+        // //将a标签添加文本
+        // atd.appendChild(deleted);
+        // fu.appendChild(atd);
+        // //添加一个新的绑定函数 对应下边tips  此时直接复制粘贴上边的函数 太麻烦需要在外边调用
+        // atd.onclick=function(){
+        //         // alert("d");
+        //         //点击超链接后需要删除超链接所在的那行
+        //         //获取当前div 
+        //         var div= this.parentNode;
+        //         //conform 用于弹出一个带有确认和取消按钮的框
+        //         var flag=confirm("确定?");
+        //         if(flag){
+        //                //删除当前div
+        //         div.parentNode.removeChild(div); 
+        //         }
+        //     }
+        //以上方法太难 代码也不好看 把创建结点的方法改进
 
-           //改进 可以不写
+        //改进 可以不写
         //    设置内容这样最好。 
         //   fu.innerHTML="<div>"+mingzitd"</div>"+
         //                 "<div></div>"+
         //                 "<a>"+deleted+"</a>";
-                        // 在为刚刚添加的a元素绑定单击响应内容
+        // 在为刚刚添加的a元素绑定单击响应内容
         //改进
 
 
 
-  //获取父元素
-  //虽然在这里是添加到tableid里但是会有一个隐患 就是成为兄弟节点 不是包含在里面 如果是样式的话不生效
-//  var tableid=document.getElementById("tableid");
- //改进内容/
-            //  var tbody=tableid.getElementsByClassName("tbody")[0]
-            // //  console.log(nsss);
+        //获取父元素
+        //虽然在这里是添加到tableid里但是会有一个隐患 就是成为兄弟节点 不是包含在里面 如果是样式的话不生效
+        //  var tableid=document.getElementById("tableid");
+        //改进内容/
+        //  var tbody=tableid.getElementsByClassName("tbody")[0]
+        // //  console.log(nsss);
 
-            //  //将内容添加进tbody中 
-            //  tbody.appendChild(tr);
-            //  下边就不要了
- //改进内容//
- //将fu添加到table中
-//   tableid.appendChild(fu);
-//     }
+        //  //将内容添加进tbody中 
+        //  tbody.appendChild(tr);
+        //  下边就不要了
+        //改进内容//
+        //将fu添加到table中
+        //   tableid.appendChild(fu);
+        //     }
 
-    //这边添加新内容后 添加要单独绑定一次 否则不响应删除
-// }
-
-
+        //这边添加新内容后 添加要单独绑定一次 否则不响应删除
+        // }
 
 
 
@@ -460,23 +704,23 @@
 
 
 
-// 创建一个节点 添加到#city下
-
-//创建一个元素节点 需要一个标签名作为参数 将会根据该标签名创建对象 并将创建好的对象作为返回值
-// document.createElement();
-//创建一个文本节点 需要一个文本作为参数
-// document.createTextNode()
-
-//将个结点作为某个标签的子节点
-//用法: 向一个父节点添加一个新的节点 父节点.appendchild(子节点)
-//  appendchild()
-//  li.appendChild(todo);
-
-//parentNode 查询父节点
-//insertBefore 在指定子节点之前插入新的子节点
-//removeChild() 可以删除一个子节点  语法:父节点.removeChild(子节点)  或者更好的  子节点.parentnode.remove(子节点);
 
 
+        // 创建一个节点 添加到#city下
+
+        //创建一个元素节点 需要一个标签名作为参数 将会根据该标签名创建对象 并将创建好的对象作为返回值
+        // document.createElement();
+        //创建一个文本节点 需要一个文本作为参数
+        // document.createTextNode()
+
+        //将个结点作为某个标签的子节点
+        //用法: 向一个父节点添加一个新的节点 父节点.appendchild(子节点)
+        //  appendchild()
+        //  li.appendChild(todo);
+
+        //parentNode 查询父节点
+        //insertBefore 在指定子节点之前插入新的子节点
+        //removeChild() 可以删除一个子节点  语法:父节点.removeChild(子节点)  或者更好的  子节点.parentnode.remove(子节点);
 
 
 
@@ -490,9 +734,11 @@
 
 
 
-//  document.documentElement  / /保存的是html根标签
-// var all=document.all; //表示页面中的所有元素
-// console.log(all);
+
+
+        //  document.documentElement  / /保存的是html根标签
+        // var all=document.all; //表示页面中的所有元素
+        // console.log(all);
 
         //根据class属性值查询一组元素的节点对象
         // var a=document.getElementsByClassName  //不支持ie8以下的浏览器
@@ -723,11 +969,11 @@
 
 
 
-            //全选全不选的多选框
-            //如果四个全选中 全选和全不选应该也要有状态
-            //如果四个都没选中 全选和全选也应该有状态
+        //全选全不选的多选框
+        //如果四个全选中 全选和全不选应该也要有状态
+        //如果四个都没选中 全选和全选也应该有状态
 
-            //当其选中时 其余的也选中 当他取消时 其余的也取消
+        //当其选中时 其余的也选中 当他取消时 其余的也取消
         //     var quanxuanquanbuxuan = document.getElementById("quanxuanquanbuxuan");
         //     quanxuanquanbuxuan.onclick = function () {
         //         //设置多选框选中状态  在这里不要判断checked是否是false 否则反选不对
@@ -1639,158 +1885,4 @@
 
 </body>
 
-</html>
-  
-  
-  
-  
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-      <div id="box1">
-
-        <img src="img/1.jpg" alt="">
-         <button type="button" id="prior">上一张</button>
-         <button type="button" id="next">下一张</button>
-         
-  <p id="xieyi" style="margin:0 auto; width: 400px; height:200px;overflow:scroll; background-color: #bfa;">点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-    点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j点病毒开始看大三了肯德基埃里克j
-  </p>
-   <input type="checkbox" disabled="disabled" >
-    <button type="button" disabled="disabled" id="btn">提交</button>
-
-
-        <!-- <img src="img/1.jpg" alt="">
-        <button type="button" id="prior">上一张</button>
-        <button type="button" id="next">下一张</button>
-        <p id="neirong"></p>
-
-         <p id="xieyi" style="margin:0 auto;overflow: scroll;height: 500px;  width: 200px;background-color: #bbffaa;">
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-          请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议请阅读以下协议
-         </p>
-         <input type="checkbox" style="margin: 0 auto;width: 100px;" disabled="disabled"> 
-         <input type="button" value="注册" id="zhuce" disabled="disabled">
-
-
-
-         <p id="namee"></p> -->
-
-      </div>
-
-       
-</body>
-<script>
-//图片切换
- var prior=document.getElementById("prior");
- var next=document.getElementById("next");
- var index=0;
- var  imgmg=document.getElementsByTagName("img")[0];
-//  console.log(imgmg);
- imgsrc=['img/1.jpg','img/2.jpg','img/3.jpg','img/11.jpg'];
-  window.onload=function(){
-    next.onclick=function(){
-           if(index<imgsrc.length-1){
-             index++;
-             imgmg.src=imgsrc[index];
-           }
-    }
-     prior.onclick=function(){
-        if(index>0){
-            index--;
-            imgmg.src=imgsrc[index];
-        }
-     }
-  }
-// 用户协议确认
-
-  var xieyi=document.getElementById("xieyi");
-  // console.log("xieyi");
-  var  inputs=document.getElementsByTagName("input")[0];
-  var btn=document.getElementById("btn");
-  window.onload=function(){
-    xieyi.onscroll=function(){
-      if(xieyi.scrollHeight-xieyi.scrollTop==xieyi.clientHeight)
-    {
-       inputs.disabled=false;
-        btn.disabled=false;
-    }
-    }
-  }
-
-
-//样式选择器
-  // var obj=$("#box1");
-  // obj.css("background","yellow");
-
-
-
-
-//  var prior=document.getElementById("prior");
-//  var next=document.getElementById("next");
-//  var index=0;
-//  window.onload=function(){
-//    //获取img标签
-//    var imgtag=document.getElementsByTagName("img")[0];
-//   //  console.log(imgtag);
-//      var imgsrc=['img/1.jpg','img/2.jpg','img/323.jpg','img/11.jpg']
-//      var ptag=document.getElementById("neirong");
-//     //  console.log(ptag);
-//      var zongshu=imgsrc.length;
-//      ptag.innerHTML="当前一共"+zongshu+"张"+"  当前在第"+(index+1)+"页";
-//      prior.onclick=function(){
-//         if(index>0){
-//           index--
-//           imgtag.src=imgsrc[index];
-//           ptag.innerHTML="当前一共"+zongshu+"张"+"  当前在第"+(index+1)+"页";
-//         }
-//      }
-//      next.onclick=function(){
-//        if(index<imgsrc.length-1){
-//          index++;
-//          imgtag.src=imgsrc[index];
-//          console.log(index);
-//          ptag.innerHTML="当前一共"+zongshu+"张"+"  当前在第"+(index+1)+"页";
-
-//        }
-//      }
-    
-//  } 
-
-
-//  window.onload=function(){
-//   var xieyi=document.getElementById("xieyi");
-//   var inputs=document.getElementsByTagName("input");
-//   xieyi.onscroll=function(){
-//     if(xieyi.scrollHeight-xieyi.scrollTop==xieyi.clientHeight){
-//       console.log("hello");
-//       inputs[0].disabled=false;
-//       inputs[1].disabled=false;
-//     } 
-//   }
-//  };
-
-
-</script>
 </html>
