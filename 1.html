@@ -222,7 +222,7 @@
     <!-- <button type="button" id="btn">点我一下</button> -->
 
     <!-- 事件的传播 -->
-    <style>
+    <!-- <style>
         #box1 {
             width: 300px;
             height: 300px;
@@ -245,8 +245,289 @@
         <div id="box2">
             <div id="box3"></div>
         </div>
-    </div>
+    </div> -->
+
+
+
+
+
+    <!-- 拖拽 -->
+    <!-- <style>
+          #box1{
+              width:100px;
+              height: 100px;
+              background-color: red;
+              position: absolute;
+          }
+          #box2{
+              width:100px;
+              height: 100px;
+              background-color: yellow;
+              position:absolute;
+              left:200px;
+              top: 200px;
+          }
+     </style>
+     a
+     <div id="box1" ></div>
+     <div id="box2"></div> -->
+
+    <!-- 滚轮事件 -->
+    <!-- <style>
+          #box1{
+              width:100px;
+              height: 100px;
+              background-color: red;}
+     </style>
+      <div id="box1"></div> -->
+
+
+    <!-- 键盘事件 -->
+    <!-- <style>
+          #box1{
+              width:100px;
+              height: 100px;
+              background-color: red;
+              position: absolute;}
+     </style>
+      <div id="box1"></div>
+      <input type="text"> -->
     <script>
+        // BOM
+        //浏览器对象模型
+        //bom可以使我们通过js来操作浏览器
+        // 在bom中为我们提供了一组对象，用来完成对浏览器的操作
+        // bom对象
+        // window
+        //代表的是整个浏览器窗口，同时window也是网页中的全局对象
+        // Navigator
+
+        //  console.log( Navigator.userAgent);
+        //  火狐的userAgent
+        //现在使用userAgent判断浏览器的信息
+        //是一个字符串包含有用来描述浏览器信息的内容 不同的浏览器有不同的userAgent
+        //  由于历史原因，对象中大部分属性都是网景公司搬来的，已经不能帮助我们识别浏览器了
+        // 代表的当前浏览器信息，通过改对象可以识别不同的浏览器
+        // History
+        // 代表浏览器的历史记录 可以通过该对象来操作浏览器的历史记录
+        // Location  
+        //代表当前浏览器的地址栏信息 可以通过该对象可以获取地址栏信息，或者操作浏览器跳转页面，由于隐私原因，该对象不能获取到具体的历史记录
+        // 只能操作浏览器向前或者向后翻页 而且该操作只在当次访问时有效
+        // Screen
+        //代表用户的屏幕信息 可以获取到屏幕的相关信息 显示器的相关信息 //移动端用的多
+    //     console.log(navigator.userAgent);
+    //     var ua=navigator.userAgent;
+    //     if(/firefox/i.test(ua)){
+    //   alert("火狐")
+    //     }else{
+    //         alert("chrome浏览器")
+    //     }
+        //在ie11中已经将微软和ie相关标志已经去除了 已经不能通过userAgent来识别一个浏览器是否是ie了 除了rv:11.0
+    //但此时还可以通过一些浏览器特有的对象来判断浏览器信息
+    //   if(window.ActiveXObject){
+            //       alert("ie");
+    //   }else{
+    //       alert("not ie");
+    //   }
+         //方法2
+        //  if("ActiveXObject" in window){
+    //       alert("ie");
+    //   }else{
+    //       alert("not ie");
+    //   }
+    //检查是否包含一个属性
+       alert("ActiveXObject" in window); //method two
+
+
+
+        //    键盘事件 
+        //  window.onload=function(){
+        //   //键盘事件 onkeydown 按键被按下 如果按键不松手连续触发 当连续触发时第一次和第二次之间会间隔稍微长一点 其余的会非常快
+        //    // onkeyup  按键被松开
+        //    //键盘事件一般都会绑定到一些可以获取到焦点的对象 例如input 或者document
+        //     document.onkeydown=function(event){
+        //         //通过 keycode来获取按键的编码;
+        //         // 除了keycode还提供了几个属性
+        //         // altkey
+        //         // ctrlkey
+        //         // SHIFTkEY
+        //         event=event||window.event;
+        //             console.log( event.keyCode);
+        //             if(event.keyCode===89&event.altKey){
+        //                 console.log("ctrl+y被按下了");
+        //             }
+        //     };
+        //     var input=document.getElementsByTagName("input")[0];
+        //     input.onkeydown=function(){
+        //         if(event.keyCode>=48  &&event.keyCode<=57){
+        //             console.log("内容框被按下");
+        //        return false; //取消默认行为 默认行为是在输入框中输入东西 如果在onkeydown中取消默认行为则输入行为不会出现在文本框中
+        //         }
+
+        //     }
+        //     document.onkeydown=function(){
+        //         console.log("dd");
+        //     }
+
+        //移动div 
+        //                 document.onkeydown=function(event){
+        //                     event=event||window.event;
+        //                     console.log(event.keyCode);
+        //                     var speed=4; //表示速度
+        //                     //37 左 38上 39 右 40 下
+        //                     //当用户按了ctrl后速度加快
+        //                     if(event.ctrlKey){
+        //                         speed=50;
+        //                          //要ctrl和左右键一起按
+        //                     };
+        //                     switch(event.keyCode){
+        //                         case 37:
+        //                         box1.style.left=box1.offsetLeft-speed+"px";
+        //                         break;
+        //                         case 38:  box1.style.top=box1.offsetTop-speed+"px";
+        //                         break;
+        //                         case 39:   box1.style.left=box1.offsetLeft+speed+"px";
+        //                         break;
+        //                         case 40:  box1.style.top=box1.offsetTop+speed+"px" ;
+        //                         break;
+        //                     }
+        //                 }
+        //  }
+
+        // //滚轮事件
+        //    window.onload=function(){
+        //          //当滚轮向下滚动时 box1变长
+        //          // 向上滚动时 box1 变短
+        //         var box1=document.getElementById("box1");
+        //         // onmousewheel 火狐不支持 火狐中需要使用dommousescroll 可以用使用onwheel代替
+        //         // 中间函数需要 addeventlistener函数绑定 默认行为取消不可以 return false
+        //         // 需要使用event来取消默认行为 
+        //          event.preventDefault(); //取消默认行为 ie8不支持
+        //         box1.onmousewheel=function(event){
+        //              event.wheelDelta; //向上+120  向下-120可以获取鼠标滚轮滚动的方向 不看大小只看正负
+        //                 //  alert(  event.wheelDelta);  
+        //                 //在火狐中使用event.detail来获取滚动的方向
+        //                 //  向上滚-3 向下滚3
+        //                 if(event.wheelDelta>0){
+        //                      //变长
+        //                      box1.style.height=box1.clientHeight-10+"px" ;
+        //                 }else{
+        //                      //变短
+        //                      box1.style.height=box1.clientHeight+10+"px";
+        //                 }
+        //                 //如果浏览器有滚动条则滚动条会随之滚动  取消需要 return false;
+        //                 return false;
+
+        //         }
+        //         //为火狐绑定
+        //         bind(box,"DOMMouseScroll",box1.onmousewheel);
+        //    }
+
+
+
+
+
+        // //拖拽
+        // //图片也可以拖拽
+        // var box=document.getElementById("box1");
+        // var obj=document.getElementById("box2");
+        // drag(box1);
+        // drag(box2);
+        //         //作为一个函数提取出来 
+        //         // 参数 开启拖拽的元素
+        //          function drag(obj){
+        //             obj.onmousedown=function(){
+        //         //ie支持 在火狐中调用不报错 如果使用chrome报错
+        //         //  setcapture() 写法1
+        //         if(obj.setCapture){
+        //             obj.setCapture();
+        //         }
+        //               //写法2
+        //               obj.setCapture&&obj.setCapture();
+
+        //         // 鼠标位置就在元素位置
+        //                 //div偏移量 clientX-offsetleft
+        //                          // clientY-offsettop
+        //                 //偏移量在点击的时候求 因为在点击的时候就确定了 在移动的时候也可以但没必要
+        //                  event=event||window.event;
+        //                  var ol =event.clientX-obj.offsetLeft;
+        //                  var ot = event.clientY-obj.offsetTop;
+
+        //         //为document绑定一个documentmove事件
+        //         document.onmousemove=function(event){
+        //              //当鼠标移动时被拖拽元素跟随移动
+        //               event=event||window.event;
+        //               //获取鼠标坐标
+        //               var left=event.clientX - ol;
+        //               var top=event.clientY - ot;
+        //             //    修改box1位置
+        //             obj.style.left=left+"px";
+        //             obj.style.top=top+"px";
+        //         }
+        //         //当鼠标松开时 被拖拽元素固定在当前位置
+        //         document.onmouseup=function(){
+        //         // 取消documentmove事件；
+        //         document.onmousemove=null;
+        //         document.onmouseup=null;
+        //          //当鼠标松开时取消对事件捕获
+        //           box.releaseCapture&&box.releaseCapture();
+        //         }
+        //          //当拖拽一个网页中的内容时 会导致拖拽异常 这是浏览器提供的默认行为 如果不希望 可以return false
+
+        //         return false;  //对ie8 不起作用
+        //         //ie8  setcapture()
+        //     }
+        //          }
+
+        //  window.onload=function(){
+        //       //拖拽box1 元素
+        //     //   拖拽流程
+        //     //   1 当鼠标在拖拽元素上按下时，开始拖拽 onmousedown
+        //     //   2 当鼠标移动时被拖拽元素跟随鼠标移动  onmousemove
+        //     //   3 当松开鼠标时 不动固定在当前位置  onmouseup
+        //     box.onmousedown=function(){
+        //         //ie支持 在火狐中调用不报错 如果使用chrome报错
+        //         //  setcapture() 写法1
+        //         if(box.setCapture){
+        //             box.setCapture();
+        //         }
+        //               //写法2
+        //                box.setCapture&&box.setCapture();
+
+        //         // 鼠标位置就在元素位置
+        //                 //div偏移量 clientX-offsetleft
+        //                          // clientY-offsettop
+        //                 //偏移量在点击的时候求 因为在点击的时候就确定了 在移动的时候也可以但没必要
+        //                  event=event||window.event;
+        //                  var ol =event.clientX-box.offsetLeft;
+        //                  var ot = event.clientY-box.offsetTop;
+
+        //         //为document绑定一个documentmove事件
+        //         document.onmousemove=function(event){
+        //              //当鼠标移动时被拖拽元素跟随移动
+        //               event=event||window.event;
+        //               //获取鼠标坐标
+        //               var left=event.clientX - ol;
+        //               var top=event.clientY - ot;
+        //             //    修改box1位置
+        //               box.style.left=left+"px";
+        //              box.style.top=top+"px";
+        //         }
+        //         //当鼠标松开时 被拖拽元素固定在当前位置
+        //         document.onmouseup=function(){
+        //         // 取消documentmove事件；
+        //         document.onmousemove=null;
+        //         document.onmouseup=null;
+        //          //当鼠标松开时取消对事件捕获
+        //           box.releaseCapture&&box.releaseCapture();
+        //         }
+        //          //当拖拽一个网页中的内容时 会导致拖拽异常 这是浏览器提供的默认行为 如果不希望 可以return false
+
+        //         return false;  //对ie8 不起作用
+        //         //ie8  setcapture()
+        //     }
+        //  }
+
         //事件的传播
         // w3c标准将事件分成三个阶段
         //1，捕获阶段 在捕获阶段时从最外层的祖先元素 向目标元素进行事件的捕获，但是默认此时不会触发事件
@@ -255,34 +536,34 @@
         //如果希望在捕获阶段就触发事件，将 addeventlistener的第三个参数设置为true  从外到里 所以一般是fasle
         //在ie8及以下的浏览器中没有捕获阶段
 
-        window.onload = function () {
-            var box1 = document.getElementById("box1");
-            var box2 = document.getElementById("box2");
-            var box3 = document.getElementById("box3");
-        }
-        bind(box1, "click", function () {
-            alert("box1");
-        })
-        bind(box2, "click", function () {
-            alert("box2");
-        })
-        bind(box3, "click", function () {
-            alert("box3");
-        })
+        // window.onload = function () {
+        //     var box1 = document.getElementById("box1");
+        //     var box2 = document.getElementById("box2");
+        //     var box3 = document.getElementById("box3");
+        // }
+        // bind(box1, "click", function () {
+        //     alert("box1");
+        // })
+        // bind(box2, "click", function () {
+        //     alert("box2");
+        // })
+        // bind(box3, "click", function () {
+        //     alert("box3");
+        // })
 
-        function bind(obj, eventStr, callback) {
-            if (obj.addEventListener) {
-                //大部分浏览器兼容的方式
-                obj.addEventListener(eventStr, callback, false);
-            } else { //IE8及以下
-                //this是谁由调用方式决定 由浏览器决定 
-                //  callback.call(obj); 就可以控制
-                obj.attachEvent("on" + eventStr, function () {
-                    //在匿名函数中调用回调函数 callback();
-                    callback.call(obj);
-                });
-            }
-        }
+        // function bind(obj, eventStr, callback) {
+        //     if (obj.addEventListener) {
+        //         //大部分浏览器兼容的方式
+        //         obj.addEventListener(eventStr, callback, false);
+        //     } else { //IE8及以下
+        //         //this是谁由调用方式决定 由浏览器决定 
+        //         //  callback.call(obj); 就可以控制
+        //         obj.attachEvent("on" + eventStr, function () {
+        //             //在匿名函数中调用回调函数 callback();
+        //             callback.call(obj);
+        //         });
+        //     }
+        // }
 
 
 
