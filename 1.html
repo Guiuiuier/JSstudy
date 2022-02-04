@@ -292,7 +292,254 @@
      </style>
       <div id="box1"></div>
       <input type="text"> -->
-    <script>
+
+         <!-- history location -->
+          <!-- <h1>text1</h1>
+          <a href="1001.html">a</a>
+          <input type="button" id="btn" value="dd">
+          <input type="button" id="btn1"> -->
+     
+           <!-- 延时器 -->
+             <!-- <h1 id="count">1</h1>
+             <input type="button" id="btn"> -->
+              
+             <!-- 定时器切换图片练习
+             <img src="1.jpg" alt="">
+             <br/>
+             <button id="start">开始</button>
+             <button id="stop">停止</button> -->
+
+
+             <!-- 定时器的应用一 -->
+             <style>
+                 #box1{
+                     width: 100px;
+                     height: 50px;
+                     background-color: red;
+                     position: absolute;
+                     left:0;
+                 }
+                 #box2{
+                     width: 100px;
+                     height: 50px;
+                     background-color: yellow;
+                     position: absolute;
+                     left:0;
+                     top: 200px;}
+             </style>
+             <button id="btn">点击按钮以后box1向右边移动</button>
+             <button id="btn1">点击按钮以后box1向左边移动</button>
+              <button id="btn2">点击后box2向右边移动</button>
+              <button id="btn3">元素变大</button>
+             <div style="width: 0;height: 1000px;border-left:1px solid black;position: absolute;left:800px;top:0"></div>
+              <div id="box1"> </div>
+              <div id="box2"> </div>
+ <script>
+
+            // 定时器的应用一 可以打包成js文件 src引入
+//   window.onload=function(){
+//     var btn=document.getElementById("btn");
+//     var btn1=document.getElementById("btn1");
+//     var btn2=document.getElementById("btn2");
+//     var btn3=document.getElementById("btn3");
+//     var box1=document.getElementById("box1");
+//     var timer; //创建变量
+//      //尝试一个可以创建一个简单动画的函数 
+//     //参数  obj=要执行的动画对象  target执行动画的目标位置   speed移动的速度 正数向右边移动 负数向左边移动; attr:要执行的动画样式； callback回调函数 动画执行完毕后执行
+//      function move(obj,attr,speed,target,callback){
+//             clearInterval(obj.timer);  //关闭定时器     避免同一个元素开启多个定时器
+//             //获取元素当前位置，因为无法判断该元素究竟在哪个位置所以是不方便的 不方便确定参数正负
+//             var current=parseInt(getstyle(obj,"left"));
+//              //判断速度正负 如果0-800则正 800-0为-
+//               if(current>target){speed=-speed};
+//             //开启定时器
+//  //避免开启同一个定时器 向执行动画中添加一个timer属性 用来保存自己的定时器标识
+//                obj.timer=setInterval(function(){
+//                      //获取box1 原来的值 
+//                     var leaveright=parseInt(getstyle(obj,attr)); //如果在这里不转换会导致拼串 获取当前的样式
+//                     //旧值基础上增加
+//                     var newValue=leaveright+speed; //如果+10 ==就没问题
+//                     //左移动时判断newvalue是否小于target 如果speed的值是负数  如果是正数是右边移动
+//                     if((speed<0&&newValue<=target)||(speed>0&&newValue>target)){
+//                         newValue=target;
+//                     }
+//                     obj.style[attr]=newValue+"px"; // 因为是个变量不可以style.width
+//                     if(newValue==target){
+//                         //这里要写大于等于800 如果写等于就不生效 因为+10总会生效
+//                   //到达目标关闭定时器
+//                   clearInterval(obj.timer);
+//                    //动画执行完毕调用回调函数
+//                    //在这里判断回调函数 有才回调  在下边函数调用时虽然能用 但是会报错
+//                    callback&&callback();
+//               }
+//                 },30)
+//        }
+
+//        //获取元素任意样式 在ie浏览器里 如果没设置方位有可能getstyle为auto
+//        function getstyle(obj,name){
+//              if(window.getComputedStyle){
+//                  return getComputedStyle(obj,null)[name];
+//              }else {
+//                  return obj.currentstyle[name];
+//              }        
+//       }
+//  //包装后
+// //   左边移动
+//        btn1.onclick=function(){
+//          move(box1,"left",10,0);
+//        }
+// // 右边移动
+//        btn.onclick=function(){
+//            move(box1,"left",11,800)
+//        }
+//     //    box2右边移动
+//        btn2.onclick=function(){
+//            move(box2,"left",10,800)
+//        } 
+//     // box2元素变大
+//      btn3.onclick=function(){
+//          move(box2,"width",10,800,function(){
+//              move(box2,"height",10,800,function(){alert("执行完毕")});
+//          });
+//         // move(box2,"height",10,800);
+//      }
+
+       //此时调用box2后会发现box1 和box2 无法同时运行 是因为timer在全局变量中保存被污染了
+//   //点击按钮后左移动 未包装函数时
+//            btn1.onclick=function(){
+//             clearInterval(timer);  //关闭定时器     
+//         //开启定时器
+//                timer=setInterval(function(){
+//                      //获取box1 原来的值 
+//                     var leaveright=parseInt(getstyle(box1,"left")); //如果在这里不转换会导致拼串
+//                     //旧值基础上增加
+//                     var newValue=leaveright-11; //如果+10 ==就没问题
+//                     if(newValue<0){
+//                         newValue=0;
+//                     }
+//                     box1.style.left=newValue+"px";
+//                     if(newValue<=0){
+//                         //这里要写大于等于800 如果写等于就不生效 因为+10总会生效
+//                   //到底目标关闭定时器
+//                   clearInterval(timer);
+//               }
+//                 },30)
+       
+
+//        //获取元素任意样式 在ie浏览器里 如果没设置方位有可能getstyle为auto
+//        function getstyle(obj,name){
+//              if(window.getComputedStyle){
+//                  return getComputedStyle(obj,null)[name];
+//              }else {
+//                  return obj.currentstyle[name];
+//              }
+//          }
+                    
+         
+         //    点击按钮后box1往右走 
+//        btn.onclick=function(){
+//         clearInterval(timer);  //关闭定时器     
+//         //开启定时器
+//                timer=setInterval(function(){
+//                      //获取box1 原来的值 
+//                     var leaveright=parseInt(getstyle(box1,"left")); //如果在这里不转换会导致拼串
+//                     //旧值基础上增加
+//                     var newValue=leaveright+11; //如果+10 ==就没问题
+//                     if(newValue>800){
+//                         newValue=800;
+//                     }
+//                     box1.style.left=newValue+"px";
+//                     if(newValue>=800){
+//                         //这里要写大于等于800 如果写等于就不生效 因为+10总会生效
+//                   //到底目标关闭定时器
+//                   clearInterval(timer);
+//               }
+//                 },30)
+//        }
+
+//        //获取元素任意样式 在ie浏览器里 如果没设置方位有可能getstyle为auto
+//        function getstyle(obj,name){
+//              if(window.getComputedStyle){
+//                  return getComputedStyle(obj,null)[name];
+//              }else {
+//                  return obj.currentstyle[name];
+//              }
+//          }
+//   } //windowonload 终止点
+
+         //延时调用  调用一个函数不马上执行，而是隔一段时间以后再执行 只执行一次 虽然是个定时器。 
+         //定时调用会进行多次  延时调用只会进行一次
+        //   var num=1;
+          //开启一个定时器
+        //    setInterval(function(){
+        //        console.log(num++);
+
+        //    },3000)
+
+        //  开启一个延时器
+        //  setTimeout(function(){
+        //      console.log(num++);
+        //  },3000)
+        // 使用cleartimeout()来关闭一个延时调用
+        //延时调用和定时调用实际上 是可以互相代替的 在开发中可以根据自己的需要去选择
+ //图片切换定时器
+//    window.onload=function(){
+//        var stop=document.getElementById("stop");
+//        var start=document.getElementById("start");
+//        var imgmg=document.getElementsByTagName("img")[0];
+//        var imgsrc=["1.jpg","2.jpg"];
+//        var index=0;
+//        //定义一个变量 用来保存定时器标识
+//         var timer;
+//         start.onclick=function(){
+//              //目前每点击一次按钮就会开始一个定时器 如果一直点击按钮就会定时器不断使用 此时点击停止也不行。 因为timer只有一个 每次只会关闭最新的一个timer
+//              //所以在开始定时器之前要关闭定时器
+//              clearInterval(timer);
+//         //全局的timer
+//             timer=setInterval(function(){
+//             //判断是否超过最大索引 方法1   if(index>=imgsrc.length){index=0}  方法2.index=index%imgsrc.length
+//             //方法3
+//            if(index<imgsrc.length){
+//                imgmg.src=imgsrc[index++];
+//            }else if(
+//                index=imgsrc.length
+//            ){
+//                 index=0;
+//                imgmg.src=imgsrc[index++];
+//            }
+//        },500)
+//     }
+//        stop.onclick=function(){
+//            //停止只需要关闭定时器
+//            //clearinterval 可以接受任意参数 如果参数是一个有效的定时器标识 如果参数不是有效的表示则什么也不做
+//            clearInterval(timer);
+//        }
+//    }
+
+  //定时器
+//  window.onload=function(){
+//      var count=document.getElementById("count");
+//      var btn=document.getElementById("btn");
+//      //使count中内容自动切换
+//     //js的执行速度是非常快的  如果每间隔一段时间执行 可以使用定时调用
+//      //setinterval()//定时调用 将一个函数每隔一段时间执行一次  参数 1.回调函数 2,每次调用的时间 单位为毫秒
+//      //返回值： 返回一个number类型的数据 这个数字用来作为定时器的唯一表示
+//      var num=1;
+//      var timer=setInterval(function(){
+//          count.innerHTML=num++;
+//          if(num==11){
+//              //关闭定时器
+//              clearInterval(timer);
+//          }
+//      },1000);
+//     //  console.log(timer)作为唯一标识
+//     //  clearInterval() 用来关闭一个定时器  //方法中需要一个定时器的标识作为表示
+//      btn.onclick=function(){
+
+//       clearInterval(1);
+//      }
+//  }
+
         // BOM
         //浏览器对象模型
         //bom可以使我们通过js来操作浏览器
@@ -301,99 +548,151 @@
         // window
         //代表的是整个浏览器窗口，同时window也是网页中的全局对象
         // Navigator
-
-        //  console.log( Navigator.userAgent);
-        //  火狐的userAgent
-        //现在使用userAgent判断浏览器的信息
-        //是一个字符串包含有用来描述浏览器信息的内容 不同的浏览器有不同的userAgent
-        //  由于历史原因，对象中大部分属性都是网景公司搬来的，已经不能帮助我们识别浏览器了
-        // 代表的当前浏览器信息，通过改对象可以识别不同的浏览器
+    // console.log(Navigator.userAgent);
+    // 火狐的userAgent
+    // 现在使用userAgent判断浏览器的信息
+    // 是一个字符串包含有用来描述浏览器信息的内容 不同的浏览器有不同的userAgent
+    // 由于历史原因，对象中大部分属性都是网景公司搬来的，已经不能帮助我们识别浏览器了
+    // 代表的当前浏览器信息，通过改对象可以识别不同的浏览器
+    // console.log(navigator.userAgent);
+    // var ua = navigator.userAgent;
+    // if (/firefox/i.test(ua)) {
+    //     alert("火狐")
+    // } else {
+    //     alert("chrome浏览器")
+    // }
+    // 在ie11中已经将微软和ie相关标志已经去除了 已经不能通过userAgent来识别一个浏览器是否是ie了 除了rv: 11.0
+    // 但此时还可以通过一些浏览器特有的对象来判断浏览器信息
+    // if (window.ActiveXObject) {
+    //     alert("ie");
+    // } else {
+    //     alert("not ie");
+    // }
+    // 方法2
+    // if ("ActiveXObject" in window) {
+    //     alert("ie");
+    // } else {
+    //     alert("not ie");
+    // }
+    // 检查是否包含一个属性
+    // alert("ActiveXObject" in window); //method two
         // History
         // 代表浏览器的历史记录 可以通过该对象来操作浏览器的历史记录
+          
+            // var btn=document.getElementById("btn");     
+            // var btn1=document.getElementById("btn1");     
+            // window.onload=function(){
+            // //length属性可以获取到当前访问的连接数量  
+            // // alert(history.length);
+            //  //back() 回退 作用和浏览器的回退按钮一样
+            //  // forward() 跳转到下一个页面 和前进按钮一样
+            //   // go() 是以上的两个综合 可以用来跳转到指定的页面他需要一个整数作为参数
+            //           //1:表示向前跳转页面
+            //         //   2:表示向后跳转页面
+            //         //  -1:表示向后跳转一个页面
+            //         // -2：表示向后跳转两个页面
+            // btn.onclick=function(){
+            //     history.back();
+            // }   
+            // btn1.onclick=function(){
+            //     // history.forward();
+            //     history.go(1);
+            // }    
+            //      }
+    
         // Location  
         //代表当前浏览器的地址栏信息 可以通过该对象可以获取地址栏信息，或者操作浏览器跳转页面，由于隐私原因，该对象不能获取到具体的历史记录
-        // 只能操作浏览器向前或者向后翻页 而且该操作只在当次访问时有效
+        // 只能操作浏览器向前或者向后翻页 而且该操作只在当次访问时有效   使用后生成相应的历史路径
+        //   window.onload=function(){
+        //        var btn=document.getElementById("btn");
+        //        btn.onclick=function(){
+        //         //    alert(location);  //获取当前路径
+        //         // location="http://www.baidu.com"; //改路径
+        //         // location="相对路径也可以"
+        //         //  assign() //用来跳转其他的页面作用和直接修改location一样
+        //         //  location.assign("http://www.baidu.com")
+        //         // location.reload(); //刷新按钮的功能 重新加载当前页面  如果在方法中传递一个true作为参数 则会强制清空缓存刷新页面；
+        //         // location.reload(true);
+        //         // replace() //使用新的文档替换当前的文档  使用新的页面替换当前的页面 调用完毕也会跳转页面 但是不会生成历史记录 不能使用回退按钮回退
+        //         location.replace("1001.html");
+        //        }
+        //   }
         // Screen
         //代表用户的屏幕信息 可以获取到屏幕的相关信息 显示器的相关信息 //移动端用的多
-    //     console.log(navigator.userAgent);
-    //     var ua=navigator.userAgent;
-    //     if(/firefox/i.test(ua)){
-    //   alert("火狐")
-    //     }else{
-    //         alert("chrome浏览器")
-    //     }
-        //在ie11中已经将微软和ie相关标志已经去除了 已经不能通过userAgent来识别一个浏览器是否是ie了 除了rv:11.0
-    //但此时还可以通过一些浏览器特有的对象来判断浏览器信息
-    //   if(window.ActiveXObject){
-            //       alert("ie");
-    //   }else{
-    //       alert("not ie");
-    //   }
-         //方法2
-        //  if("ActiveXObject" in window){
-    //       alert("ie");
-    //   }else{
-    //       alert("not ie");
-    //   }
-    //检查是否包含一个属性
-       alert("ActiveXObject" in window); //method two
+
 
 
 
         //    键盘事件 
-        //  window.onload=function(){
-        //   //键盘事件 onkeydown 按键被按下 如果按键不松手连续触发 当连续触发时第一次和第二次之间会间隔稍微长一点 其余的会非常快
-        //    // onkeyup  按键被松开
-        //    //键盘事件一般都会绑定到一些可以获取到焦点的对象 例如input 或者document
-        //     document.onkeydown=function(event){
-        //         //通过 keycode来获取按键的编码;
-        //         // 除了keycode还提供了几个属性
-        //         // altkey
-        //         // ctrlkey
-        //         // SHIFTkEY
-        //         event=event||window.event;
-        //             console.log( event.keyCode);
-        //             if(event.keyCode===89&event.altKey){
-        //                 console.log("ctrl+y被按下了");
-        //             }
-        //     };
-        //     var input=document.getElementsByTagName("input")[0];
-        //     input.onkeydown=function(){
-        //         if(event.keyCode>=48  &&event.keyCode<=57){
-        //             console.log("内容框被按下");
-        //        return false; //取消默认行为 默认行为是在输入框中输入东西 如果在onkeydown中取消默认行为则输入行为不会出现在文本框中
-        //         }
+            // window.onload = function () {
+            //     //通过修改dir来影响移动的方向
+            //     // 全局变量
+            //     var dir = 0;
+            //     var input = document.getElementsByTagName("input")[0];
+            //     //键盘事件 onkeydown 按键被按下 如果按键不松手连续触发 当连续触发时第一次和第二次之间会间隔稍微长一点 其余的会非常快
+            //     // onkeyup  按键被松开
+            //     //键盘事件一般都会绑定到一些可以获取到焦点的对象 例如input 或者document
+            //     document.onkeydown = function (event) {
+            //         //通过 keycode来获取按键的编码;
+            //         // 除了keycode还提供了几个属性
+            //         // altkey
+            //         // ctrlkey
+            //         // SHIFTkEY
+            //         event = event || window.event;
+            //         console.log(event.keyCode);
+            //         if (event.keyCode === 89 & event.altKey) {
+            //             console.log("ctrl+y被按下了");
+            //         }
+            //     };
+            //     input.onkeydown = function () {
+            //         if (event.keyCode >= 48 && event.keyCode <= 57) {
+            //             console.log("内容框被按下");
+            //             return false; //取消默认行为 默认行为是在输入框中输入东西 如果在onkeydown中取消默认行为则输入行为不会出现在文本框中
+            //         }
 
-        //     }
-        //     document.onkeydown=function(){
-        //         console.log("dd");
-        //     }
+            //     }
+            //    // // document.onkeydown = function () {
+            //    // //     console.log("dd");
+            //    // // }
 
-        //移动div 
-        //                 document.onkeydown=function(event){
-        //                     event=event||window.event;
-        //                     console.log(event.keyCode);
-        //                     var speed=4; //表示速度
-        //                     //37 左 38上 39 右 40 下
-        //                     //当用户按了ctrl后速度加快
-        //                     if(event.ctrlKey){
-        //                         speed=50;
-        //                          //要ctrl和左右键一起按
-        //                     };
-        //                     switch(event.keyCode){
-        //                         case 37:
-        //                         box1.style.left=box1.offsetLeft-speed+"px";
-        //                         break;
-        //                         case 38:  box1.style.top=box1.offsetTop-speed+"px";
-        //                         break;
-        //                         case 39:   box1.style.left=box1.offsetLeft+speed+"px";
-        //                         break;
-        //                         case 40:  box1.style.top=box1.offsetTop+speed+"px" ;
-        //                         break;
-        //                     }
-        //                 }
-        //  }
-
+            //     document.onkeydown = function (event) {
+            //         event = event || window.event;
+            //         // console.log(event.keyCode);
+            //         var speed = 4; //表示速度
+            //         dir = event.keyCode;
+            //         //37 左 38上 39 右 40 下
+            //         //当用户按了ctrl后速度加快
+            //         if (event.ctrlKey) {
+            //             speed = 50;
+            //             //要ctrl和左右键一起按
+            //         }else{
+            //             speed=4;
+            //         }
+            //         //方向
+            //         //开启一个定时器控制div的移动
+            //         setInterval(function () {
+            //             switch (dir) {
+            //                 case 37:
+            //                     box1.style.left = box1.offsetLeft - speed + "px";
+            //                     break;
+            //                 case 38: box1.style.top = box1.offsetTop - speed + "px";
+            //                     break;
+            //                 case 39: box1.style.left = box1.offsetLeft + speed + "px";
+            //                     break;
+            //                 case 40: box1.style.top = box1.offsetTop + speed + "px";
+            //                     break;
+            //             }
+            //         }, 30);
+            //     }
+            //     //按键松开时div不移动
+            //     document.onkeyup = function () {
+            //         //设置方向等于0
+            //         dir = 0;
+            //         event.ctrlKey=false;
+            //     };
+            // }
+                
+                
         // //滚轮事件
         //    window.onload=function(){
         //          //当滚轮向下滚动时 box1变长
@@ -692,14 +991,14 @@
         指的就是向上传到 当后代元素上的事件被触发时，其祖先元素的相同事件也会被触发
         在开发中大部分冒泡是有用的 极个别除外 例如本例子中的就是无意义的。 如果不希望发生事件的冒泡可以通过事件对象来取消冒泡*/
         /*
-  
+
   window.onload=function(){
        var bx=document.getElementById("box1");
        var bxx=document.getElementById("bx");
        bxx.onclick=function(){
            alert("span");
            //取消冒泡 可以将事件对象设置为true即可取消 event/window.event 无兼容性问题不会向上冒泡了
-           event.cancelBubble=true; 
+           event.cancelBubble=true;
        }
        box1.onclick=function(){
            alert("div");
@@ -708,7 +1007,7 @@
        document.body.onclick=function(){
            alert("body");
        }
- } 
+ }
  */
 
 
@@ -753,7 +1052,7 @@ window.onload=function(){
             // 事件对象 当响应函数被触发时 浏览器每次都会将一个事件对象作为实参传递进响应函数
             // event叫啥都行
             // 在事件对象中封装了当前事件相关的一切信息:例如 鼠标位置等
-            // 
+            //
              areaDiv.onmousemove=function(event){
                //ie不兼容 可以这样改进
                   在IE8中 响应函数被触发时 浏览器不会传递事件对象
@@ -766,12 +1065,12 @@ window.onload=function(){
                 // 在showMsg中显示鼠标的坐标
                 clientX可以获取鼠标指针的水平坐标
                 clientY可以获取鼠标的垂直坐标
-                
+
                 var x=event.clientX;
                 var y=event.clientY;
                         //alert("x="+x+",y="+y);
                 showMsg.innerHTML="x="+x+",y="+y;
-             }      
+             }
 
         }
         */
@@ -844,7 +1143,7 @@ window.onload=function(){
         //      }
         //  }
         // }
-        //     }
+            // }
         //  }
 
 
