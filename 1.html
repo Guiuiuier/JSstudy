@@ -311,7 +311,7 @@
 
 
              <!-- 定时器的应用一 -->
-             <style>
+             <!-- <style>
                  #box1{
                      width: 100px;
                      height: 50px;
@@ -333,8 +333,377 @@
               <button id="btn3">元素变大</button>
              <div style="width: 0;height: 1000px;border-left:1px solid black;position: absolute;left:800px;top:0"></div>
               <div id="box1"> </div>
-              <div id="box2"> </div>
- <script>
+              <div id="box2"> </div> -->
+
+
+              <!-- 轮播图 -->
+               <!-- <style>
+                    *{
+                        margin: 0;
+                        padding:0;
+                    }
+                    #outer{
+                        width: 520px;
+                        height: 333px;
+                        margin: 50px auto;
+                        background-color: #bfa;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        position: relative;
+                        /* overflow: hidden; */
+                    }
+                    #imgList img{
+                        width: 500px;
+                        max-height:333px;
+                    }
+                    #imgList{
+                         /* 子元素开启绝对定位父元素最好开启相对定位 */
+                        list-style: none;
+                        position: absolute;  
+                        /* 设置偏移量  每移动520px 就会显示下一张*/
+                        /* left: -520px; */
+                    }
+                    #imgList li{
+                        float: left;
+                        margin:0 10px;
+                    }
+                    /* 设置导航按钮 */
+                    #nav{
+                        position: absolute;
+                        bottom:25px;
+                        /* 设置定位 */
+                         /* outer=520 nav=(nav.a.width+padding)*5a =(15+5+5)*5=125px  520-125=395px/2=198px  js设置不写死*/
+                         /* left:198px; */
+                    }
+                    #nav a{
+                         /* 内联元素宽高不起作用 */
+                         float: left;
+                        width: 15px;
+                        height: 15px;
+                        background-color: red;
+                        margin: 0 5px;
+                        opacity: 0.5;
+                    }
+                   /* #nav .active{
+                        设置为黑第一个元素 
+                        background-color: black;
+                    }*/
+                    #nav a:hover{
+                        background-color: black;
+                    }
+               </style>
+               <div id="outer">
+                   <ul id="imgList">
+                    <li><img src="1.jpg" alt=""></li>
+                    <li> <img src="2.jpg" alt=""></li>
+                    <li><img src="1.jpg" alt=""></li>
+                    <li> <img src="2.jpg" alt=""></li>
+                    <li> <img src="1.jpg" alt=""></li>  
+                    < //这里新增一个 可以重复来 但是有点自己骗自己的意思 但是只有两张图片看起来切换最后一张的时候是一样的 如果是不一样的话 过渡非常的明显
+                   </ul>
+                    导航按钮 
+                    <div id="nav">
+                        <a href="javascript:;" class="active"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </div>
+               </div> -->
+ <!-- 类 -->
+ <!-- <style>
+
+     .b1{
+     width:100px;
+     height: 100px;
+     background-color: red;
+    }       
+    
+    .b2{
+     /* width:100px; */
+     height: 300px;
+     background-color: yellow;
+    }       
+
+
+</style>
+ <button id="btn1">点击后修改样式</button>
+ <div class="b1 b2" id="box"> </div> -->
+<!-- <div class="b2"></div> -->
+
+<!-- 二级菜单 没有css文件 只能学逻辑 -->
+ <!-- <style>
+     *{
+         margin: 0;
+         padding: 0;
+         list-style-type: none;
+     }
+     a,img{
+         border:0;
+         text-decoration: none;
+     }
+     body{
+         font:12px/100% Arial,Helvetica,sans-serif,"新宋体";
+     }
+ </style>
+   <div id="my_menu" class="sdmenu">
+       <span class="menuSpan">在线工具</span>
+       <a href="#">1</a>
+       <a href="#">2</a>
+       <a href="#">3</a>
+       <a href="#">4</a>
+       <div class="collapsed">
+           <span class="menuSpan">支持我们</span>
+           <a href="#">3</a>
+           <a href="#">2</a>
+           <a href="#">1</a>
+       </div>
+   </div> -->
+<script>
+   
+
+
+
+ //二级菜单练习
+  window.onload=function(){
+      //我们每一个菜单都是div
+       //当div具有collapsed这个类时 就是折叠状态
+      //当没有这个类时候 div就是展开操作
+ 
+  //获取所有menuSpan的元素
+   var menuSpan=document.querySelectorAll(".menuSpan");      //classname不兼容ie8
+   //定义一个变量 来保存当前打开的菜单;
+   var openDiv=menuSpan[0].parentNode;
+   //为span绑定单击相应函数
+   for(var i=0;i<menuSpan.length;i++){
+    menuSpan[i].onclick=function(){
+        var  parentDiv= this.parentNode; //this代表当前点击的span 获取当前父元素 因为 div下menuspan
+         //关闭parentDiv
+          toggoleClass(parentDiv,"collapsed");  //添加一个collapsed折叠起来 转换 实现折叠和展开 但是这个有个bug 不能同时打开 只能打开一个 不过已经够了
+          if(openDiv!=parentDiv&&!hasClass(openDiv,"collapsed")){  //为什么要判断这个如果打开的是同一个 其他的没有打开 由于addclass 中 有个 hasclass判定所以不会生效 加的都是同一个 所以要判断
+                        //打开菜单以后 应该关闭之前打开的菜单栏
+                        //为了实现统一处理动画过渡效果， 我们希望在这将addClss改为toggleClass
+
+                        //此处toggoleClass不需要移除的功能
+          toggoleClass(openDiv,"collapsed");
+          }
+
+           //修改openDiv为当前打开的菜单
+           openDiv=parentDiv;
+    }
+   }
+
+   function move(obj, attr, speed, target, callback) {
+            clearInterval(obj.timer);  //关闭定时器     避免同一个元素开启多个定时器
+            //获取元素当前位置，因为无法判断该元素究竟在哪个位置所以是不方便的 不方便确定参数正负
+            var current = parseInt(getStyle(obj, attr));
+            //判断速度正负 如果0-800则正 800-0为-
+            if (current > target) { speed = -speed };
+            //开启定时器
+            //避免开启同一个定时器 向执行动画中添加一个timer属性 用来保存自己的定时器标识
+            obj.timer = setInterval(function () {
+                //获取box1 原来的值 
+                var oldValue = parseInt(getStyle(obj, attr)); //如果在这里不转换会导致拼串 获取当前的样式
+                //旧值基础上增加
+                var newValue = oldValue + speed; //如果+10 ==就没问题
+                //左移动时判断newvalue是否小于target 如果speed的值是负数  如果是正数是右边移动
+                if ((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
+                    newValue = target;
+                }
+                obj.style[attr] = newValue + "px"; // 因为是个变量不可以style.width
+                if (newValue == target) {
+                    //这里要写大于等于800 如果写等于就不生效 因为+10总会生效
+                    //到达目标关闭定时器
+                    clearInterval(obj.timer);
+                    //动画执行完毕调用回调函数
+                    //在这里判断回调函数 有才回调  在下边函数调用时虽然能用 但是会报错
+                    callback && callback();
+                }
+            }, 30)
+        }
+
+        //获取元素任意样式 在ie浏览器里 如果没设置方位有可能getstyle为auto
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+            } else {
+                return obj.currentStyle[name];
+            }
+        }
+    }    
+
+
+  }
+
+// //类的操作
+//  window.onload=function(){
+//       var btn=document.getElementById("btn1");
+//       var box=document.getElementById("box");
+//       btn.onclick=function(){
+//           //通过style属性来修改元素的样式 每修改一个样式浏览器就需要重新渲染一次  性能是比较差的 当我们要修改多个样式时不太方便 
+//         //   box.style.backgroundColor="yellow";
+//         //   box.style.width="200px";
+//         //改进写法 修改class属性 我们只需要修改一次即可同时修改多个样式， 性能较好 只渲染一次，
+//         // box.className +=" b2"; //选中后是b2的样式  加的时候要有一个空格b2否则拼串
+//     //    addClass(box,"b2");
+//     //    hasClass(box,"hellow");
+//         // removeClass(box,"b2");
+//         toggoleClass(box,"b2");
+//       }
+
+//       //定义一个函数 用来添加指定的class属性值 obj要添加的属性值， cn要添加的class值
+//   function addClass(obj,cn){
+//    //检查obj是否含有cn
+//     if(!hasClass(obj,cn)){ //如果有就不管 没有才管
+//         obj.className+=" "+cn;  
+//     }
+
+//   } ;
+//        };
+//    //判断一个元素中 是否含有指定的class值避免多次点击 导致一直添加 虽然没什么印象
+//     function hasClass(obj,cn){
+//     //判断obj中有没有cn class
+//     //   return obj.className==cn; //如果class 中  b1 b2这种写法 就不会生效 要写个正则表达式
+//     //  var reg=/b2/; //但是这种方法有可能出现 b2012这种class也会返回true 所以要写个单词边界
+//     //  var reg=/\bb2\b/; //这种更好  \b 单词边界\b 但是这样会写死了 cn写死
+//     var reg=new RegExp("\\b"+cn+"\\b"); //构造函数 更好
+//      return reg.test(obj.className); 
+//     }
+//  //删除一个元素中指定的class值
+//     function removeClass(obj,cn){
+//         //创建一个正则表达式
+//         var reg=new RegExp("\\b"+cn+"\\b"); //构造函数 更好
+//         //删除class 
+//         obj.className=obj.className.replace(reg,"");  //用空串替换正则表达式的内容
+//     }
+// //切换一个类 如果元素中有该类 则删除 如果没有则添加
+//  function toggoleClass(obj,cn){
+//      //判断有没有cn
+//      if(hasClass(obj,cn)){
+//          //有则删除
+//          removeClass(obj,cn);
+//      }else{
+//          addclass(obj,cn);
+//      }
+//  }
+
+
+    // 轮播图
+
+    // window.onload = function () {
+    //     var timer; //创建一个定时器变量以便在点击暂停定时器的时候 能识别到这个timer
+    //     var imgList = document.getElementById("imgList");
+    //     var imgshu = document.getElementsByTagName("img");
+    //     imgList.style.width = 520 * imgshu.length + "px";
+    //     var nav = document.getElementById("nav");
+    //     var ashu = document.getElementsByTagName("a");
+    //     var outer = document.getElementsByTagName("outer");
+    //     var index = 0; //设置切换索引
+    //     nav.style.left = ((520 - (25 * ashu.length)) / 2) + "px";
+    //     // 或者 (outer.offsetWidth-nav.offsetWidth)/2+"px";
+    //     //默认第一个a为黑色
+    //     ashu[index].style.backgroundColor = "black";
+    //     // 点击超链接切换到指定的图片
+    //     for (var i = 0; i < imgshu.length - 1; i++) {
+    //         //为每一个超链接添加一个num属性
+    //         ashu[i].num = i;
+    //         //为超链接设置点击响应函数
+    //         //在点击的时候关闭定时器
+    //         ashu[i].onclick = function () {
+    //             //关闭自动切换的定时器
+    //             clearInterval(timer);
+    //             //但是点击后再也不执行了。 永远关了.
+    //             //获取点击超链接的索引 如果是alert(i)的话会显示最后一次循环的i 因为是先循环后执行单击函数
+    //             index = this.num;//修正前面写的index 全局变量
+    //             //    imgList.style.left=-index*520+"px"; // 在此时就可以不用这么写了 引入了 move函数
+    //             move(imgList, "left", 50, -520 * index, function () {
+    //                 //动画执行完毕开启自动切换
+    //                 autoChange();
+    //             });
+    //             setA();
+    //             // ashu[index].style.backgroundColor = "black"; //这里每次调用后都会黑色 不会消失好像全选 所以要额外写一个控制seta函数    就不用写这句了
+
+    //         }
+    //     }
+
+    //     //创建一个方法用来设置选中的a
+    //     function setA() {
+    //         //判断当前索引是不是最后一张 如果是最后一张了a标签只有五个 就将index重复至0 实际上是第六张作为第一章看后 设置index0
+    //         if (index >= ashu.length) {
+    //             //如果是设置为0
+    //             index = 0;
+    //             //但是我们有更好的办法。 不将第六张作为第一章 直接修改left
+    //             //此时显示的是最后一张图片， 而最后一张图片和第一张图片时一样的
+    //             //通过css将最后一张切换为第一张
+    //             imgList.style.left = 0;
+    //         }
+    //         for (var i = 0; i < ashu.length; i++) {
+    //             ashu[i].style.backgroundColor = ""; //设置全为red
+    //             ashu[index].style.backgroundColor = "black";  //设置每个索引为目标时为黑
+    //         }
+    //     }
+    //     //自动切换图片 创建一个函数开启自动切换
+    //     function autoChange() {
+    //         //开启一个定时器
+    //         timer = setInterval(function () {
+    //             //索引自增
+    //             index++;
+    //             //执行动画切换图片
+    //             // //判断index 值 index%=imgList.length; 
+    //             index %= imgshu.length;
+    //             console.log(index);
+    //             move(imgList, "left", 50, -520 * index, function () {
+    //                 //修改导航按钮
+    //                 setA();
+
+    //             });
+
+
+
+    //         }, 3000);
+    //     }
+    //     autoChange(); //开启自动切换
+
+    //     function move(obj, attr, speed, target, callback) {
+    //         clearInterval(obj.timer);  //关闭定时器     避免同一个元素开启多个定时器
+    //         //获取元素当前位置，因为无法判断该元素究竟在哪个位置所以是不方便的 不方便确定参数正负
+    //         var current = parseInt(getStyle(obj, attr));
+    //         //判断速度正负 如果0-800则正 800-0为-
+    //         if (current > target) { speed = -speed };
+    //         //开启定时器
+    //         //避免开启同一个定时器 向执行动画中添加一个timer属性 用来保存自己的定时器标识
+    //         obj.timer = setInterval(function () {
+    //             //获取box1 原来的值 
+    //             var oldValue = parseInt(getStyle(obj, attr)); //如果在这里不转换会导致拼串 获取当前的样式
+    //             //旧值基础上增加
+    //             var newValue = oldValue + speed; //如果+10 ==就没问题
+    //             //左移动时判断newvalue是否小于target 如果speed的值是负数  如果是正数是右边移动
+    //             if ((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
+    //                 newValue = target;
+    //             }
+    //             obj.style[attr] = newValue + "px"; // 因为是个变量不可以style.width
+    //             if (newValue == target) {
+    //                 //这里要写大于等于800 如果写等于就不生效 因为+10总会生效
+    //                 //到达目标关闭定时器
+    //                 clearInterval(obj.timer);
+    //                 //动画执行完毕调用回调函数
+    //                 //在这里判断回调函数 有才回调  在下边函数调用时虽然能用 但是会报错
+    //                 callback && callback();
+    //             }
+    //         }, 30)
+    //     }
+
+    //     //获取元素任意样式 在ie浏览器里 如果没设置方位有可能getstyle为auto
+    //     function getStyle(obj, name) {
+    //         if (window.getComputedStyle) {
+    //             return getComputedStyle(obj, null)[name];
+    //         } else {
+    //             return obj.currentStyle[name];
+    //         }
+    //     }
+    // }    
+
+
+
 
             // 定时器的应用一 可以打包成js文件 src引入
 //   window.onload=function(){
