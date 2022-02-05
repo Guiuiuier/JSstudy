@@ -463,76 +463,129 @@
 
 
 
- //二级菜单练习
-  window.onload=function(){
-      //我们每一个菜单都是div
-       //当div具有collapsed这个类时 就是折叠状态
-      //当没有这个类时候 div就是展开操作
+ //JSon
+   //创建对象 写属性名的时候可以加双引号也可不加
+//    var obj={
+//        name:"sunwukong",
+//    };
+    // console.log(obj.name);
+    //  console.log(obj); //这是js对象 java不认识  其他语言都不认识是要转化成json才可以
+   //但是把他转换成字符串的话 都可以认识 这就是json  json 就是特殊格式的字符串
+   //json的格式和js对象的格式一样 只不过json字符串中的属性名必须加双引号  js中写不写都可以加双引号 属性名 其他的和js语法一致
+   //json分类 ：1，对象{} 2，数组[]；
+//    JSon中允许的值 1，字符串 2，数值 ，3布尔值，4，空值 5，对象 6，数组 7，不能是函数
+//  var obj=  '{"name":"sunwukong",}';
+//  var arr= '[1,2,3]' //这是json数组
+//  var arr '{1,2,3}' 这是json对象'
+//  var obj2='{"arr":[1,2,3]}';
+//  var arr2='[{"name":"sunwukong"}]'; //字符串里面没有属性  所以要转换为对象
+// console.log(arr2);
+//转换为对象的方法  JSON 方法 这个对象可以帮助我们转换为js对象 
+  //JSON.parse()
+     //可以将JSON字符串转换为js对象
+      //需要一个json字符串作为参数 会将该字符串转换为js对象
+    // var o = JSON.parse(arr2);
+    // console.log(o[0]);
+
+// var obj3={
+//     name:"zhubajie",
+//     age:28,
+//     gender:"nan"
+// } //转换为json
+
+// js对象->json 
+// JSON.stringify()  可以将一个js对象转换为json对象
+//  需要一个js对象作为参数， 会返回一个json字符串
+// var str=JSON.stringify(obj3);
+// console.log(str);  //但是在ie7以下不支持 ify方法
+
+//  eval()  //这个函数可以用来执行一段字符串形式的js代码，并将执行结果返回, 但是如果eval()执行的字符串含有{} 它会将{}当成代码块  eval可以直接执行字符串代码 但是在开发中尽量不使用，首先执行性能差，还具有安全隐患
+//  var str='({"name":"sunwukong"})';  //在这里加了个括号后就代码是整体不是代码块了.
+//如果需要兼容ie7以下的json 可以通过引入外部的js文件来处理
+// eval("("+str+")");
+//    str2="alert('hello')";
+//    eval(str2);
+
+
+
+
+
+
+
+//  //二级菜单练习
+//   window.onload=function(){
+//       //我们每一个菜单都是div
+//        //当div具有collapsed这个类时 就是折叠状态
+//       //当没有这个类时候 div就是展开操作
  
-  //获取所有menuSpan的元素
-   var menuSpan=document.querySelectorAll(".menuSpan");      //classname不兼容ie8
-   //定义一个变量 来保存当前打开的菜单;
-   var openDiv=menuSpan[0].parentNode;
-   //为span绑定单击相应函数
-   for(var i=0;i<menuSpan.length;i++){
-    menuSpan[i].onclick=function(){
-        var  parentDiv= this.parentNode; //this代表当前点击的span 获取当前父元素 因为 div下menuspan
-         //关闭parentDiv
-          toggoleClass(parentDiv,"collapsed");  //添加一个collapsed折叠起来 转换 实现折叠和展开 但是这个有个bug 不能同时打开 只能打开一个 不过已经够了
-          if(openDiv!=parentDiv&&!hasClass(openDiv,"collapsed")){  //为什么要判断这个如果打开的是同一个 其他的没有打开 由于addclass 中 有个 hasclass判定所以不会生效 加的都是同一个 所以要判断
-                        //打开菜单以后 应该关闭之前打开的菜单栏
-                        //为了实现统一处理动画过渡效果， 我们希望在这将addClss改为toggleClass
+//   //获取所有menuSpan的元素
+//    var menuSpan=document.querySelectorAll(".menuSpan");      //classname不兼容ie8
+//    //定义一个变量 来保存当前打开的菜单;
+//    var openDiv=menuSpan[0].parentNode;
+//    //为span绑定单击相应函数
+//    for(var i=0;i<menuSpan.length;i++){
+//     menuSpan[i].onclick=function(){
+//         var  parentDiv= this.parentNode; //this代表当前点击的span 获取当前父元素 因为 div下menuspan
+//          //在获取类之前 获取元素的高度  过渡效果
+//            var begin=parentDiv.offsetHeight;
+//           //切换parentDiv显示
+//           toggoleClass(parentDiv,"collapsed");  //添加一个collapsed折叠起来 转换 实现折叠和展开 但是这个有个bug 不能同时打开 只能打开一个 不过已经够了
+//             //在切换类之后获取一个高度
+//             var end=parentDiv.offsetHeight;
+//           if(openDiv!=parentDiv&&!hasClass(openDiv,"collapsed")){  //为什么要判断这个如果打开的是同一个 其他的没有打开 由于addclass 中 有个 hasclass判定所以不会生效 加的都是同一个 所以要判断
+//                         //打开菜单以后 应该关闭之前打开的菜单栏
+//                         //为了实现统一处理动画过渡效果， 我们希望在这将addClss改为toggleClass
 
-                        //此处toggoleClass不需要移除的功能
-          toggoleClass(openDiv,"collapsed");
-          }
+//                         //此处toggoleClass不需要移除的功能
+//           toggoleClass(openDiv,"collapsed");
+//           }
 
-           //修改openDiv为当前打开的菜单
-           openDiv=parentDiv;
-    }
-   }
+//            //修改openDiv为当前打开的菜单
+//            openDiv=parentDiv;
+//     }
+//    }
 
-   function move(obj, attr, speed, target, callback) {
-            clearInterval(obj.timer);  //关闭定时器     避免同一个元素开启多个定时器
-            //获取元素当前位置，因为无法判断该元素究竟在哪个位置所以是不方便的 不方便确定参数正负
-            var current = parseInt(getStyle(obj, attr));
-            //判断速度正负 如果0-800则正 800-0为-
-            if (current > target) { speed = -speed };
-            //开启定时器
-            //避免开启同一个定时器 向执行动画中添加一个timer属性 用来保存自己的定时器标识
-            obj.timer = setInterval(function () {
-                //获取box1 原来的值 
-                var oldValue = parseInt(getStyle(obj, attr)); //如果在这里不转换会导致拼串 获取当前的样式
-                //旧值基础上增加
-                var newValue = oldValue + speed; //如果+10 ==就没问题
-                //左移动时判断newvalue是否小于target 如果speed的值是负数  如果是正数是右边移动
-                if ((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
-                    newValue = target;
-                }
-                obj.style[attr] = newValue + "px"; // 因为是个变量不可以style.width
-                if (newValue == target) {
-                    //这里要写大于等于800 如果写等于就不生效 因为+10总会生效
-                    //到达目标关闭定时器
-                    clearInterval(obj.timer);
-                    //动画执行完毕调用回调函数
-                    //在这里判断回调函数 有才回调  在下边函数调用时虽然能用 但是会报错
-                    callback && callback();
-                }
-            }, 30)
-        }
+//    function move(obj, attr, speed, target, callback) {
+//             clearInterval(obj.timer);  //关闭定时器     避免同一个元素开启多个定时器
+//             //获取元素当前位置，因为无法判断该元素究竟在哪个位置所以是不方便的 不方便确定参数正负
+//             var current = parseInt(getStyle(obj, attr));
+//             //判断速度正负 如果0-800则正 800-0为-
+//             if (current > target) { speed = -speed };
+//             //开启定时器
+//             //避免开启同一个定时器 向执行动画中添加一个timer属性 用来保存自己的定时器标识
+//             obj.timer = setInterval(function () {
+//                 //获取box1 原来的值 
+//                 var oldValue = parseInt(getStyle(obj, attr)); //如果在这里不转换会导致拼串 获取当前的样式
+//                 //旧值基础上增加
+//                 var newValue = oldValue + speed; //如果+10 ==就没问题
+//                 //左移动时判断newvalue是否小于target 如果speed的值是负数  如果是正数是右边移动
+//                 if ((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
+//                     newValue = target;
+//                 }
+//                 obj.style[attr] = newValue + "px"; // 因为是个变量不可以style.width
+//                 if (newValue == target) {
+//                     //这里要写大于等于800 如果写等于就不生效 因为+10总会生效
+//                     //到达目标关闭定时器
+//                     clearInterval(obj.timer);
+//                     //动画执行完毕调用回调函数
+//                     //在这里判断回调函数 有才回调  在下边函数调用时虽然能用 但是会报错
+//                     callback && callback();
+//                 }
+//             }, 30)
+//         }
 
-        //获取元素任意样式 在ie浏览器里 如果没设置方位有可能getstyle为auto
-        function getStyle(obj, name) {
-            if (window.getComputedStyle) {
-                return getComputedStyle(obj, null)[name];
-            } else {
-                return obj.currentStyle[name];
-            }
-        }
-    }    
+//         //获取元素任意样式 在ie浏览器里 如果没设置方位有可能getstyle为auto
+//         function getStyle(obj, name) {
+//             if (window.getComputedStyle) {
+//                 return getComputedStyle(obj, null)[name];
+//             } else {
+//                 return obj.currentStyle[name];
+//             }
+//         }
+//     }    
 
 
-  }
+//   }
 
 // //类的操作
 //  window.onload=function(){
